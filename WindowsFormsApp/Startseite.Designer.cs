@@ -29,10 +29,11 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Startseite));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.lblAngemeldetals = new System.Windows.Forms.Label();
             this.lblAbm = new System.Windows.Forms.LinkLabel();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -51,8 +52,21 @@ namespace WindowsFormsApp
             this.btnArbeitszeit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.groupArbeitstage = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblTitelArbeitszeit = new System.Windows.Forms.Label();
+            this.btnArbeitstage = new System.Windows.Forms.Button();
+            this.lblAnzahlStunden = new System.Windows.Forms.Label();
+            this.lblJahr = new System.Windows.Forms.Label();
+            this.lblMonat = new System.Windows.Forms.Label();
+            this.lblTag = new System.Windows.Forms.Label();
+            this.txtStunden = new System.Windows.Forms.TextBox();
+            this.txtJahr = new System.Windows.Forms.TextBox();
+            this.txtMonat = new System.Windows.Forms.TextBox();
+            this.txtTag = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.lblAngemeldetals = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -65,6 +79,8 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel8.SuspendLayout();
+            this.groupArbeitstage.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -82,7 +98,6 @@ namespace WindowsFormsApp
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
             this.panel1.Controls.Add(this.lblAngemeldetals);
-            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.lblAbm);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.panel7);
@@ -91,20 +106,23 @@ namespace WindowsFormsApp
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1156, 546);
             this.panel1.TabIndex = 1;
             // 
-            // panel8
+            // lblAngemeldetals
             // 
-            this.panel8.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel8.Location = new System.Drawing.Point(254, 12);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(666, 511);
-            this.panel8.TabIndex = 7;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            this.lblAngemeldetals.AutoSize = true;
+            this.lblAngemeldetals.Font = new System.Drawing.Font("Marlboro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAngemeldetals.Location = new System.Drawing.Point(926, 14);
+            this.lblAngemeldetals.Name = "lblAngemeldetals";
+            this.lblAngemeldetals.Size = new System.Drawing.Size(53, 22);
+            this.lblAngemeldetals.TabIndex = 8;
+            this.lblAngemeldetals.Text = "label1";
+            this.lblAngemeldetals.Click += new System.EventHandler(this.lblAngemeldetals_Click);
             // 
             // lblAbm
             // 
@@ -165,7 +183,7 @@ namespace WindowsFormsApp
             // 
             // btnÜbersicht
             // 
-            this.btnÜbersicht.BackColor = System.Drawing.Color.Transparent;
+            this.btnÜbersicht.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnÜbersicht.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnÜbersicht.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnÜbersicht.Location = new System.Drawing.Point(0, 0);
@@ -211,6 +229,7 @@ namespace WindowsFormsApp
             this.btnKrankheit.Text = "Krankheitstage verwalten";
             this.btnKrankheit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnKrankheit.UseVisualStyleBackColor = false;
+            this.btnKrankheit.Click += new System.EventHandler(this.btnKrankheit_Click);
             // 
             // panel2
             // 
@@ -307,6 +326,137 @@ namespace WindowsFormsApp
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.LavenderBlush;
+            this.panel8.Controls.Add(this.groupArbeitstage);
+            this.panel8.Location = new System.Drawing.Point(254, 12);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(666, 511);
+            this.panel8.TabIndex = 7;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // groupArbeitstage
+            // 
+            this.groupArbeitstage.Controls.Add(this.groupBox1);
+            this.groupArbeitstage.Controls.Add(this.lblTitelArbeitszeit);
+            this.groupArbeitstage.Controls.Add(this.btnArbeitstage);
+            this.groupArbeitstage.Controls.Add(this.lblAnzahlStunden);
+            this.groupArbeitstage.Controls.Add(this.lblJahr);
+            this.groupArbeitstage.Controls.Add(this.lblMonat);
+            this.groupArbeitstage.Controls.Add(this.lblTag);
+            this.groupArbeitstage.Controls.Add(this.txtStunden);
+            this.groupArbeitstage.Controls.Add(this.txtJahr);
+            this.groupArbeitstage.Controls.Add(this.txtMonat);
+            this.groupArbeitstage.Controls.Add(this.txtTag);
+            this.groupArbeitstage.Location = new System.Drawing.Point(12, 10);
+            this.groupArbeitstage.Name = "groupArbeitstage";
+            this.groupArbeitstage.Size = new System.Drawing.Size(639, 488);
+            this.groupArbeitstage.TabIndex = 0;
+            this.groupArbeitstage.TabStop = false;
+            this.groupArbeitstage.Visible = false;
+            this.groupArbeitstage.Enter += new System.EventHandler(this.groupArbeitstage_Enter);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(0, 84);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(639, 404);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblTitelArbeitszeit
+            // 
+            this.lblTitelArbeitszeit.AutoSize = true;
+            this.lblTitelArbeitszeit.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitelArbeitszeit.Location = new System.Drawing.Point(17, 26);
+            this.lblTitelArbeitszeit.Name = "lblTitelArbeitszeit";
+            this.lblTitelArbeitszeit.Size = new System.Drawing.Size(375, 52);
+            this.lblTitelArbeitszeit.TabIndex = 9;
+            this.lblTitelArbeitszeit.Text = "Arbeitstage verwalten";
+            this.lblTitelArbeitszeit.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // btnArbeitstage
+            // 
+            this.btnArbeitstage.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnArbeitstage.Location = new System.Drawing.Point(180, 269);
+            this.btnArbeitstage.Name = "btnArbeitstage";
+            this.btnArbeitstage.Size = new System.Drawing.Size(181, 88);
+            this.btnArbeitstage.TabIndex = 8;
+            this.btnArbeitstage.Text = "Eingabe";
+            this.btnArbeitstage.UseVisualStyleBackColor = true;
+            this.btnArbeitstage.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblAnzahlStunden
+            // 
+            this.lblAnzahlStunden.AutoSize = true;
+            this.lblAnzahlStunden.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblAnzahlStunden.Location = new System.Drawing.Point(323, 184);
+            this.lblAnzahlStunden.Name = "lblAnzahlStunden";
+            this.lblAnzahlStunden.Size = new System.Drawing.Size(90, 17);
+            this.lblAnzahlStunden.TabIndex = 7;
+            this.lblAnzahlStunden.Text = "Anzahl Stunden";
+            // 
+            // lblJahr
+            // 
+            this.lblJahr.AutoSize = true;
+            this.lblJahr.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblJahr.Location = new System.Drawing.Point(250, 186);
+            this.lblJahr.Name = "lblJahr";
+            this.lblJahr.Size = new System.Drawing.Size(30, 17);
+            this.lblJahr.TabIndex = 6;
+            this.lblJahr.Text = "Jahr";
+            // 
+            // lblMonat
+            // 
+            this.lblMonat.AutoSize = true;
+            this.lblMonat.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblMonat.Location = new System.Drawing.Point(197, 186);
+            this.lblMonat.Name = "lblMonat";
+            this.lblMonat.Size = new System.Drawing.Size(39, 17);
+            this.lblMonat.TabIndex = 5;
+            this.lblMonat.Text = "Monat";
+            // 
+            // lblTag
+            // 
+            this.lblTag.AutoSize = true;
+            this.lblTag.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTag.Location = new System.Drawing.Point(142, 186);
+            this.lblTag.Name = "lblTag";
+            this.lblTag.Size = new System.Drawing.Size(26, 17);
+            this.lblTag.TabIndex = 4;
+            this.lblTag.Text = "Tag";
+            // 
+            // txtStunden
+            // 
+            this.txtStunden.Location = new System.Drawing.Point(323, 219);
+            this.txtStunden.Name = "txtStunden";
+            this.txtStunden.Size = new System.Drawing.Size(56, 23);
+            this.txtStunden.TabIndex = 3;
+            // 
+            // txtJahr
+            // 
+            this.txtJahr.Location = new System.Drawing.Point(250, 219);
+            this.txtJahr.Name = "txtJahr";
+            this.txtJahr.Size = new System.Drawing.Size(37, 23);
+            this.txtJahr.TabIndex = 2;
+            // 
+            // txtMonat
+            // 
+            this.txtMonat.Location = new System.Drawing.Point(197, 219);
+            this.txtMonat.Name = "txtMonat";
+            this.txtMonat.Size = new System.Drawing.Size(37, 23);
+            this.txtMonat.TabIndex = 1;
+            // 
+            // txtTag
+            // 
+            this.txtTag.Location = new System.Drawing.Point(142, 219);
+            this.txtTag.Name = "txtTag";
+            this.txtTag.Size = new System.Drawing.Size(37, 23);
+            this.txtTag.TabIndex = 0;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
@@ -318,16 +468,9 @@ namespace WindowsFormsApp
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // lblAngemeldetals
+            // timer1
             // 
-            this.lblAngemeldetals.AutoSize = true;
-            this.lblAngemeldetals.Font = new System.Drawing.Font("Marlboro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAngemeldetals.Location = new System.Drawing.Point(935, 14);
-            this.lblAngemeldetals.Name = "lblAngemeldetals";
-            this.lblAngemeldetals.Size = new System.Drawing.Size(53, 22);
-            this.lblAngemeldetals.TabIndex = 8;
-            this.lblAngemeldetals.Text = "label1";
-            this.lblAngemeldetals.Click += new System.EventHandler(this.lblAngemeldetals_Click);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Startseite
             // 
@@ -354,6 +497,9 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.groupArbeitstage.ResumeLayout(false);
+            this.groupArbeitstage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +530,18 @@ namespace WindowsFormsApp
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.Label lblAngemeldetals;
+        private System.Windows.Forms.GroupBox groupArbeitstage;
+        private System.Windows.Forms.Label lblTitelArbeitszeit;
+        private System.Windows.Forms.Button btnArbeitstage;
+        private System.Windows.Forms.Label lblAnzahlStunden;
+        private System.Windows.Forms.Label lblJahr;
+        private System.Windows.Forms.Label lblMonat;
+        private System.Windows.Forms.Label lblTag;
+        private System.Windows.Forms.TextBox txtStunden;
+        private System.Windows.Forms.TextBox txtJahr;
+        private System.Windows.Forms.TextBox txtMonat;
+        private System.Windows.Forms.TextBox txtTag;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

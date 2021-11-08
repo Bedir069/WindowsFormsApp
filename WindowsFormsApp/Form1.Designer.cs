@@ -85,6 +85,7 @@ namespace WindowsFormsApp
             this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Anmeldename";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -106,6 +107,7 @@ namespace WindowsFormsApp
             this.lblSoFT.Size = new System.Drawing.Size(328, 52);
             this.lblSoFT.TabIndex = 6;
             this.lblSoFT.Text = "Phil Morris\' SoFT";
+            this.lblSoFT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSoFT.Click += new System.EventHandler(this.SoFT_Click);
             // 
             // label5
@@ -129,8 +131,9 @@ namespace WindowsFormsApp
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.No;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -144,6 +147,8 @@ namespace WindowsFormsApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1217, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblHelp);
@@ -154,6 +159,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.btnAnmelden);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Tag = "";

@@ -27,7 +27,7 @@ namespace WindowsFormsApp
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            groupArbeitstage.Hide();
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
@@ -42,7 +42,7 @@ namespace WindowsFormsApp
 
         private void btnUrlaub_Click(object sender, EventArgs e)
         {
-
+            groupArbeitstage.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace WindowsFormsApp
 
         private void btnArbeitszeit_Click(object sender, EventArgs e)
         {
-
+            groupArbeitstage.Show();
         }
 
         private void lblAbm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -73,6 +73,36 @@ namespace WindowsFormsApp
         private void lblAngemeldetals_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Am " + txtTag.Text + "." + txtMonat.Text + "."+ txtJahr.Text + " wurde " + txtStunden.Text + " Stunden geschufftet. Heftig!");
+        }
+
+        private void groupArbeitstage_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKrankheit_Click(object sender, EventArgs e)
+        {
+            groupArbeitstage.Hide();
         }
     }
 }
