@@ -25,7 +25,7 @@ namespace WindowsFormsApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=Benutzerdatenbank;Integrated Security=True"); // making connection   
+            SqlConnection con = new SqlConnection(@"Data Source=DITIB-01\SQLEXPRESSNR2;Initial Catalog=master;Integrated Security=True"); // making connection   
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Benutzerdaten WHERE Anmeldename='" + txtLogin.Text + "' AND Passwort='" + txtPassword.Text + "'", con);
             SqlDataAdapter sda2 = new SqlDataAdapter("SELECT Position FROM Benutzerdaten WHERE Anmeldename='" + txtLogin.Text + "' AND Passwort='" + txtPassword.Text + "'", con);
 
@@ -38,24 +38,13 @@ namespace WindowsFormsApp
             {
                 startseite.lblAngemeldetals.Text = "Angemeldet als " + dt2.Rows[0][0].ToString();
                 startseite.ShowDialog();
+                lblPasserror.Hide();
             }
             else
-                MessageBox.Show("Invalid username or password");
+                lblPasserror.Show();
+                lblPasserror.Text = "Invalid username or password";
         }
-        /*
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            lblTime.Text = DateTime.Now.ToString("HH:mm");
-            lblSecond.Text = DateTime.Now.ToString("ss");
-            lblDate.Text = DateTime.Now.ToString("MMM dd yyyy");
-            lblDay.Text = DateTime.Now.ToString("dddd");
-            lblSecond.Location = new Point(lblTime.Location.X + lblTime.Width - 5, lblSecond.Location.Y);
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            timer.Start();
-        }
-        */
+        
         private void hide()
         {
             throw new NotImplementedException();

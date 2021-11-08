@@ -22,7 +22,7 @@ namespace WindowsFormsApp
 
         private void Startseite_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -94,15 +94,23 @@ namespace WindowsFormsApp
         {
 
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            lblTime.Text = DateTime.Now.ToString("HH:mm");
+            lblSecond.Text = DateTime.Now.ToString("ss");
+            //lblDate.Text = DateTime.Now.ToString("MMM dd yyyy");
+            //lblDay.Text = DateTime.Now.ToString("dddd");
+            lblSecond.Location = new Point(lblTime.Location.X + lblTime.Width - 5, lblSecond.Location.Y);
         }
 
         private void btnKrankheit_Click(object sender, EventArgs e)
         {
             groupArbeitstage.Hide();
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
