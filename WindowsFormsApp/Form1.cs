@@ -25,7 +25,7 @@ namespace WindowsFormsApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DITIB-01\SQLEXPRESSNR2;Initial Catalog=master;Integrated Security=True"); // making connection   
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=Benutzerdatenbank;Integrated Security=True"); // making connection   
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Benutzerdaten WHERE Anmeldename='" + txtLogin.Text + "' AND Passwort='" + txtPassword.Text + "'", con);
             SqlDataAdapter sda2 = new SqlDataAdapter("SELECT Position FROM Benutzerdaten WHERE Anmeldename='" + txtLogin.Text + "' AND Passwort='" + txtPassword.Text + "'", con);
 

@@ -56,6 +56,7 @@ namespace WindowsFormsApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.groupArbeitstage = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTitelArbeitszeit = new System.Windows.Forms.Label();
             this.btnArbeitstage = new System.Windows.Forms.Button();
             this.lblAnzahlStunden = new System.Windows.Forms.Label();
@@ -68,8 +69,6 @@ namespace WindowsFormsApp
             this.txtTag = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -93,11 +92,10 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(38, 29);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(33, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(274, 20);
+            this.textBox1.Size = new System.Drawing.Size(240, 16);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -120,27 +118,24 @@ namespace WindowsFormsApp
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1321, 728);
+            this.panel1.Size = new System.Drawing.Size(1156, 546);
             this.panel1.TabIndex = 1;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel7.Controls.Add(this.monthCalendar1);
-            this.panel7.Location = new System.Drawing.Point(1060, 306);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel7.Location = new System.Drawing.Point(928, 230);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(249, 268);
+            this.panel7.Size = new System.Drawing.Size(218, 201);
             this.panel7.TabIndex = 4;
             this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.monthCalendar1.Location = new System.Drawing.Point(26, 27);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
+            this.monthCalendar1.Location = new System.Drawing.Point(23, 20);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -150,9 +145,9 @@ namespace WindowsFormsApp
             this.lblSecond.AutoSize = true;
             this.lblSecond.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblSecond.Font = new System.Drawing.Font("Marlboro", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblSecond.Location = new System.Drawing.Point(1229, 189);
+            this.lblSecond.Location = new System.Drawing.Point(1079, 158);
             this.lblSecond.Name = "lblSecond";
-            this.lblSecond.Size = new System.Drawing.Size(80, 36);
+            this.lblSecond.Size = new System.Drawing.Size(65, 29);
             this.lblSecond.TabIndex = 9;
             this.lblSecond.Text = "lblSec";
             // 
@@ -161,9 +156,9 @@ namespace WindowsFormsApp
             this.lblTime.AutoSize = true;
             this.lblTime.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblTime.Font = new System.Drawing.Font("Marlboro", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.Location = new System.Drawing.Point(1057, 113);
+            this.lblTime.Location = new System.Drawing.Point(928, 99);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(229, 86);
+            this.lblTime.Size = new System.Drawing.Size(185, 69);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "lblTime";
             this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
@@ -172,9 +167,9 @@ namespace WindowsFormsApp
             // 
             this.lblAngemeldetals.AutoSize = true;
             this.lblAngemeldetals.Font = new System.Drawing.Font("Marlboro", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAngemeldetals.Location = new System.Drawing.Point(1057, 33);
+            this.lblAngemeldetals.Location = new System.Drawing.Point(926, 15);
             this.lblAngemeldetals.Name = "lblAngemeldetals";
-            this.lblAngemeldetals.Size = new System.Drawing.Size(70, 31);
+            this.lblAngemeldetals.Size = new System.Drawing.Size(55, 23);
             this.lblAngemeldetals.TabIndex = 8;
             this.lblAngemeldetals.Text = "label1";
             this.lblAngemeldetals.Click += new System.EventHandler(this.lblAngemeldetals_Click);
@@ -183,9 +178,9 @@ namespace WindowsFormsApp
             // 
             this.lblAbm.AutoSize = true;
             this.lblAbm.Font = new System.Drawing.Font("Marlboro", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAbm.Location = new System.Drawing.Point(1057, 64);
+            this.lblAbm.Location = new System.Drawing.Point(925, 48);
             this.lblAbm.Name = "lblAbm";
-            this.lblAbm.Size = new System.Drawing.Size(158, 48);
+            this.lblAbm.Size = new System.Drawing.Size(128, 38);
             this.lblAbm.TabIndex = 6;
             this.lblAbm.TabStop = true;
             this.lblAbm.Text = "Abmelden";
@@ -194,10 +189,9 @@ namespace WindowsFormsApp
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.LavenderBlush;
-            this.dateTimePicker1.Location = new System.Drawing.Point(1057, 271);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(928, 202);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(249, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(218, 23);
             this.dateTimePicker1.TabIndex = 5;
             // 
             // panel6
@@ -205,10 +199,9 @@ namespace WindowsFormsApp
             this.panel6.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel6.Controls.Add(this.pictureBox5);
             this.panel6.Controls.Add(this.btnÜbersicht);
-            this.panel6.Location = new System.Drawing.Point(38, 321);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel6.Location = new System.Drawing.Point(33, 241);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(246, 88);
+            this.panel6.Size = new System.Drawing.Size(215, 66);
             this.panel6.TabIndex = 2;
             // 
             // pictureBox5
@@ -216,9 +209,8 @@ namespace WindowsFormsApp
             this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(51, 88);
+            this.pictureBox5.Size = new System.Drawing.Size(45, 66);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
@@ -229,9 +221,8 @@ namespace WindowsFormsApp
             this.btnÜbersicht.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnÜbersicht.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnÜbersicht.Location = new System.Drawing.Point(0, 0);
-            this.btnÜbersicht.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnÜbersicht.Name = "btnÜbersicht";
-            this.btnÜbersicht.Size = new System.Drawing.Size(246, 88);
+            this.btnÜbersicht.Size = new System.Drawing.Size(215, 66);
             this.btnÜbersicht.TabIndex = 1;
             this.btnÜbersicht.Text = "Übersicht";
             this.btnÜbersicht.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -243,10 +234,9 @@ namespace WindowsFormsApp
             this.panel4.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.btnKrankheit);
-            this.panel4.Location = new System.Drawing.Point(38, 609);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Location = new System.Drawing.Point(33, 457);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(246, 88);
+            this.panel4.Size = new System.Drawing.Size(215, 66);
             this.panel4.TabIndex = 2;
             // 
             // pictureBox4
@@ -255,9 +245,8 @@ namespace WindowsFormsApp
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(51, 88);
+            this.pictureBox4.Size = new System.Drawing.Size(45, 66);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
@@ -268,9 +257,8 @@ namespace WindowsFormsApp
             this.btnKrankheit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnKrankheit.Font = new System.Drawing.Font("Marlboro", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnKrankheit.Location = new System.Drawing.Point(0, 0);
-            this.btnKrankheit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKrankheit.Name = "btnKrankheit";
-            this.btnKrankheit.Size = new System.Drawing.Size(246, 88);
+            this.btnKrankheit.Size = new System.Drawing.Size(215, 66);
             this.btnKrankheit.TabIndex = 1;
             this.btnKrankheit.Text = "Krankheitstage verwalten";
             this.btnKrankheit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -282,10 +270,9 @@ namespace WindowsFormsApp
             this.panel2.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.btnUrlaub);
-            this.panel2.Location = new System.Drawing.Point(38, 513);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(33, 385);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(246, 88);
+            this.panel2.Size = new System.Drawing.Size(215, 66);
             this.panel2.TabIndex = 2;
             // 
             // pictureBox2
@@ -294,9 +281,8 @@ namespace WindowsFormsApp
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 88);
+            this.pictureBox2.Size = new System.Drawing.Size(45, 66);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -308,9 +294,8 @@ namespace WindowsFormsApp
             this.btnUrlaub.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnUrlaub.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUrlaub.Location = new System.Drawing.Point(0, 0);
-            this.btnUrlaub.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUrlaub.Name = "btnUrlaub";
-            this.btnUrlaub.Size = new System.Drawing.Size(246, 88);
+            this.btnUrlaub.Size = new System.Drawing.Size(215, 66);
             this.btnUrlaub.TabIndex = 1;
             this.btnUrlaub.Text = "Urlaubstage verwalten";
             this.btnUrlaub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -322,10 +307,9 @@ namespace WindowsFormsApp
             this.panel5.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel5.Controls.Add(this.pictureBox3);
             this.panel5.Controls.Add(this.btnArbeitszeit);
-            this.panel5.Location = new System.Drawing.Point(38, 417);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Location = new System.Drawing.Point(33, 313);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(246, 88);
+            this.panel5.Size = new System.Drawing.Size(215, 66);
             this.panel5.TabIndex = 1;
             // 
             // pictureBox3
@@ -334,9 +318,8 @@ namespace WindowsFormsApp
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(51, 88);
+            this.pictureBox3.Size = new System.Drawing.Size(45, 66);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -348,9 +331,8 @@ namespace WindowsFormsApp
             this.btnArbeitszeit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnArbeitszeit.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnArbeitszeit.Location = new System.Drawing.Point(0, 0);
-            this.btnArbeitszeit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnArbeitszeit.Name = "btnArbeitszeit";
-            this.btnArbeitszeit.Size = new System.Drawing.Size(246, 88);
+            this.btnArbeitszeit.Size = new System.Drawing.Size(215, 66);
             this.btnArbeitszeit.TabIndex = 1;
             this.btnArbeitszeit.Text = "Arbeitszeit verwalten";
             this.btnArbeitszeit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -361,10 +343,9 @@ namespace WindowsFormsApp
             // 
             this.panel3.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(38, 16);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(33, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(246, 297);
+            this.panel3.Size = new System.Drawing.Size(215, 223);
             this.panel3.TabIndex = 1;
             // 
             // pictureBox1
@@ -373,10 +354,9 @@ namespace WindowsFormsApp
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(18, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 267);
+            this.pictureBox1.Size = new System.Drawing.Size(181, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -385,10 +365,9 @@ namespace WindowsFormsApp
             // 
             this.panel8.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel8.Controls.Add(this.groupArbeitstage);
-            this.panel8.Location = new System.Drawing.Point(290, 16);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel8.Location = new System.Drawing.Point(254, 12);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(761, 681);
+            this.panel8.Size = new System.Drawing.Size(666, 511);
             this.panel8.TabIndex = 7;
             this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
@@ -405,23 +384,30 @@ namespace WindowsFormsApp
             this.groupArbeitstage.Controls.Add(this.txtJahr);
             this.groupArbeitstage.Controls.Add(this.txtMonat);
             this.groupArbeitstage.Controls.Add(this.txtTag);
-            this.groupArbeitstage.Location = new System.Drawing.Point(14, 13);
-            this.groupArbeitstage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupArbeitstage.Location = new System.Drawing.Point(12, 10);
             this.groupArbeitstage.Name = "groupArbeitstage";
-            this.groupArbeitstage.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupArbeitstage.Size = new System.Drawing.Size(730, 651);
+            this.groupArbeitstage.Size = new System.Drawing.Size(639, 488);
             this.groupArbeitstage.TabIndex = 0;
             this.groupArbeitstage.TabStop = false;
             this.groupArbeitstage.Visible = false;
             this.groupArbeitstage.Enter += new System.EventHandler(this.groupArbeitstage_Enter);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(0, 14);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(639, 474);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // lblTitelArbeitszeit
             // 
             this.lblTitelArbeitszeit.AutoSize = true;
             this.lblTitelArbeitszeit.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTitelArbeitszeit.Location = new System.Drawing.Point(19, 35);
+            this.lblTitelArbeitszeit.Location = new System.Drawing.Point(17, 26);
             this.lblTitelArbeitszeit.Name = "lblTitelArbeitszeit";
-            this.lblTitelArbeitszeit.Size = new System.Drawing.Size(468, 65);
+            this.lblTitelArbeitszeit.Size = new System.Drawing.Size(375, 52);
             this.lblTitelArbeitszeit.TabIndex = 9;
             this.lblTitelArbeitszeit.Text = "Arbeitstage verwalten";
             this.lblTitelArbeitszeit.Click += new System.EventHandler(this.label5_Click);
@@ -429,10 +415,9 @@ namespace WindowsFormsApp
             // btnArbeitstage
             // 
             this.btnArbeitstage.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnArbeitstage.Location = new System.Drawing.Point(206, 359);
-            this.btnArbeitstage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnArbeitstage.Location = new System.Drawing.Point(180, 269);
             this.btnArbeitstage.Name = "btnArbeitstage";
-            this.btnArbeitstage.Size = new System.Drawing.Size(207, 117);
+            this.btnArbeitstage.Size = new System.Drawing.Size(181, 88);
             this.btnArbeitstage.TabIndex = 8;
             this.btnArbeitstage.Text = "Eingabe";
             this.btnArbeitstage.UseVisualStyleBackColor = true;
@@ -442,9 +427,9 @@ namespace WindowsFormsApp
             // 
             this.lblAnzahlStunden.AutoSize = true;
             this.lblAnzahlStunden.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAnzahlStunden.Location = new System.Drawing.Point(369, 245);
+            this.lblAnzahlStunden.Location = new System.Drawing.Point(323, 184);
             this.lblAnzahlStunden.Name = "lblAnzahlStunden";
-            this.lblAnzahlStunden.Size = new System.Drawing.Size(115, 22);
+            this.lblAnzahlStunden.Size = new System.Drawing.Size(90, 17);
             this.lblAnzahlStunden.TabIndex = 7;
             this.lblAnzahlStunden.Text = "Anzahl Stunden";
             // 
@@ -452,9 +437,9 @@ namespace WindowsFormsApp
             // 
             this.lblJahr.AutoSize = true;
             this.lblJahr.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblJahr.Location = new System.Drawing.Point(286, 248);
+            this.lblJahr.Location = new System.Drawing.Point(250, 186);
             this.lblJahr.Name = "lblJahr";
-            this.lblJahr.Size = new System.Drawing.Size(40, 22);
+            this.lblJahr.Size = new System.Drawing.Size(30, 17);
             this.lblJahr.TabIndex = 6;
             this.lblJahr.Text = "Jahr";
             // 
@@ -462,9 +447,9 @@ namespace WindowsFormsApp
             // 
             this.lblMonat.AutoSize = true;
             this.lblMonat.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblMonat.Location = new System.Drawing.Point(225, 248);
+            this.lblMonat.Location = new System.Drawing.Point(197, 186);
             this.lblMonat.Name = "lblMonat";
-            this.lblMonat.Size = new System.Drawing.Size(50, 22);
+            this.lblMonat.Size = new System.Drawing.Size(39, 17);
             this.lblMonat.TabIndex = 5;
             this.lblMonat.Text = "Monat";
             // 
@@ -472,42 +457,38 @@ namespace WindowsFormsApp
             // 
             this.lblTag.AutoSize = true;
             this.lblTag.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTag.Location = new System.Drawing.Point(162, 248);
+            this.lblTag.Location = new System.Drawing.Point(142, 186);
             this.lblTag.Name = "lblTag";
-            this.lblTag.Size = new System.Drawing.Size(34, 22);
+            this.lblTag.Size = new System.Drawing.Size(26, 17);
             this.lblTag.TabIndex = 4;
             this.lblTag.Text = "Tag";
             // 
             // txtStunden
             // 
-            this.txtStunden.Location = new System.Drawing.Point(369, 292);
-            this.txtStunden.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStunden.Location = new System.Drawing.Point(323, 219);
             this.txtStunden.Name = "txtStunden";
-            this.txtStunden.Size = new System.Drawing.Size(63, 27);
+            this.txtStunden.Size = new System.Drawing.Size(56, 23);
             this.txtStunden.TabIndex = 3;
             // 
             // txtJahr
             // 
-            this.txtJahr.Location = new System.Drawing.Point(286, 292);
-            this.txtJahr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtJahr.Location = new System.Drawing.Point(250, 219);
             this.txtJahr.Name = "txtJahr";
-            this.txtJahr.Size = new System.Drawing.Size(42, 27);
+            this.txtJahr.Size = new System.Drawing.Size(37, 23);
             this.txtJahr.TabIndex = 2;
             // 
             // txtMonat
             // 
-            this.txtMonat.Location = new System.Drawing.Point(225, 292);
-            this.txtMonat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMonat.Location = new System.Drawing.Point(197, 219);
             this.txtMonat.Name = "txtMonat";
-            this.txtMonat.Size = new System.Drawing.Size(42, 27);
+            this.txtMonat.Size = new System.Drawing.Size(37, 23);
             this.txtMonat.TabIndex = 1;
             // 
             // txtTag
             // 
-            this.txtTag.Location = new System.Drawing.Point(162, 292);
-            this.txtTag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTag.Location = new System.Drawing.Point(142, 219);
             this.txtTag.Name = "txtTag";
-            this.txtTag.Size = new System.Drawing.Size(42, 27);
+            this.txtTag.Size = new System.Drawing.Size(37, 23);
             this.txtTag.TabIndex = 0;
             // 
             // button4
@@ -525,27 +506,15 @@ namespace WindowsFormsApp
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(0, 19);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(730, 632);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
             // Startseite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(1321, 728);
+            this.ClientSize = new System.Drawing.Size(1156, 546);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Startseite";
             this.Text = "Startseite";
             this.Load += new System.EventHandler(this.Startseite_Load);
@@ -609,7 +578,6 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblSecond;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lolby\\source\\repos\\Bedir069\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj": {}
+    "C:\\Users\\lolby\\source\\repos\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lolby\\source\\repos\\Bedir069\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj": {
+    "C:\\Users\\lolby\\source\\repos\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lolby\\source\\repos\\Bedir069\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj",
+        "projectUniqueName": "C:\\Users\\lolby\\source\\repos\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj",
         "projectName": "WindowsFormsApp",
-        "projectPath": "C:\\Users\\lolby\\source\\repos\\Bedir069\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj",
+        "projectPath": "C:\\Users\\lolby\\source\\repos\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj",
         "packagesPath": "C:\\Users\\lolby\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lolby\\source\\repos\\Bedir069\\WindowsFormsApp\\WindowsFormsApp\\obj\\",
+        "outputPath": "C:\\Users\\lolby\\source\\repos\\WindowsFormsApp\\WindowsFormsApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lolby\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,6 +59,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.19, 3.1.19]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -67,7 +77,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
         }
       }
     }
