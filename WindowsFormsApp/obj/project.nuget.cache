@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SUbnsWQ/+V37fCqpeDtpr5bknagVV4q/gqe+heh3XlYCM1jNOnI9u7VSQgW2lIpbvtkcmbDNXQwijMroLVw6Tg==",
+  "dgSpecHash": "ckWmFWsxyIKpz8qU5LpUTeW2r5R8nK/eZFRdGhj8YtiTNrXZzbtRE8sGMmQKztKj+nYENOSB18R07gPynmNGzQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\lolby\\source\\repos\\WindowsFormsApp\\WindowsFormsApp\\WindowsFormsApp.csproj",
   "expectedPackageFiles": [
@@ -40,7 +40,6 @@
     "C:\\Users\\lolby\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
     "C:\\Users\\lolby\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
     "C:\\Users\\lolby\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\lolby\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
     "C:\\Users\\lolby\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.19\\microsoft.netcore.app.host.win-x64.3.1.19.nupkg.sha512"
   ],
   "logs": []

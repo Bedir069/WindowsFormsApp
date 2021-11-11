@@ -24,8 +24,8 @@ namespace WindowsFormsApp
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            startseite.ShowDialog();
+        {    
+            startseite.ShowDialog();        
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=Benutzerdatenbank;Integrated Security=True"); // making connection   
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM Benutzerdaten WHERE Anmeldename='" + txtLogin.Text + "' AND Passwort='" + txtPassword.Text + "'", con);
             SqlDataAdapter sda2 = new SqlDataAdapter("SELECT Position FROM Benutzerdaten WHERE Anmeldename='" + txtLogin.Text + "' AND Passwort='" + txtPassword.Text + "'", con);
@@ -38,7 +38,7 @@ namespace WindowsFormsApp
             if (dt.Rows[0][0].ToString() == "1")
             {
                 startseite.lblAngemeldetals.Text = "Angemeldet als " + dt2.Rows[0][0].ToString();
-                startseite.ShowDialog();
+                //startseite.ShowDialog();
                 lblPasserror.Hide();
             }
             else

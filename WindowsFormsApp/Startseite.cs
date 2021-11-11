@@ -19,14 +19,38 @@ namespace WindowsFormsApp
         {
             //textBox1.Text = "Hallo " + txtLogin.Text + ", willkommen zurück!";
         }
-
+        DateTime EndOfTime;
         private void Startseite_Load(object sender, EventArgs e)
         {
+            timerReset(null, null);
             timer1.Start();
+            button5_Click(sender, e); // alle Fenster schließen bei erneutem Login
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        private void timerReset(object sender,EventArgs e)
         {
+            EndOfTime = DateTime.Now.AddMinutes(5);
+            Timer tm = new Timer();
+            tm.Tick += new EventHandler(tm_Tick);
+            tm.Interval = 1;
+            tm.Enabled = true;
+            tm_Tick(null, null);
+        }
+        private void tm_Tick(object sender, EventArgs e)
+        {
+            TimeSpan ts = EndOfTime.Subtract(DateTime.Now);
+            string s = string.Format("{0:d2}:{1:d2}", ts.Minutes, ts.Seconds);
+            lblAutoLogoff.Text = s;
+            if (ts.TotalMilliseconds < 0)
+            {
+                ((Timer)sender).Enabled = false;
+                lblAbm_LinkClicked(null,null);
+            }
+        }
+        public void button5_Click(object sender, EventArgs e)
+        {
+            timerReset(null, null);
+            groupUrlaub.Hide();
+            groupKrankheit.Hide();
             groupArbeitstage.Hide();
         }
 
@@ -42,7 +66,10 @@ namespace WindowsFormsApp
 
         private void btnUrlaub_Click(object sender, EventArgs e)
         {
+            timerReset(null, null);
+            groupUrlaub.Show();
             groupArbeitstage.Hide();
+            groupKrankheit.Hide();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -62,7 +89,10 @@ namespace WindowsFormsApp
 
         private void btnArbeitszeit_Click(object sender, EventArgs e)
         {
+            timerReset(null, null);
             groupArbeitstage.Show();
+            groupUrlaub.Hide();
+            groupKrankheit.Hide();
         }
 
         private void lblAbm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -105,12 +135,40 @@ namespace WindowsFormsApp
 
         private void btnKrankheit_Click(object sender, EventArgs e)
         {
+            timerReset(null, null);
+            groupKrankheit.Show();
             groupArbeitstage.Hide();
+            groupUrlaub.Hide();
         }
 
         private void lblTime_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupKrankheit_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAutoLogoff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MouseBewegt(object sender, MouseEventArgs e)
+        {
+            timerReset(null, null);
         }
     }
 }
