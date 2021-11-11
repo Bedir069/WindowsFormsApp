@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,10 +16,6 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            //textBox1.Text = "Hallo " + txtLogin.Text + ", willkommen zurück!";
-        }
         DateTime EndOfTime;
         private void Startseite_Load(object sender, EventArgs e)
         {
@@ -54,16 +51,6 @@ namespace WindowsFormsApp
             groupArbeitstage.Hide();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnUrlaub_Click(object sender, EventArgs e)
         {
             timerReset(null, null);
@@ -72,20 +59,6 @@ namespace WindowsFormsApp
             groupKrankheit.Hide();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnArbeitszeit_Click(object sender, EventArgs e)
         {
@@ -100,30 +73,11 @@ namespace WindowsFormsApp
             this.Close();
         }
 
-        private void lblAngemeldetals_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Am " + txtTag.Text + "." + txtMonat.Text + "."+ txtJahr.Text + " wurde " + txtStunden.Text + " Stunden geschufftet. Heftig!");
         }
 
-        private void groupArbeitstage_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblTime.Text = DateTime.Now.ToString("HH:mm");
@@ -141,34 +95,68 @@ namespace WindowsFormsApp
             groupUrlaub.Hide();
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupKrankheit_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblAutoLogoff_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MouseBewegt(object sender, MouseEventArgs e)
         {
             timerReset(null, null);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {          
+            dtPickKrankBis.MinDate = dtPickKrankVon.Value;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            dtPickKrankBis.Enabled = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            dtPickKrankBis.Enabled = true;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            button5_Click(null, null);
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            dtPickUrlaubBis.MinDate = dtPickUrlaubVon.Value;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            dtPickUrlaubBis.Enabled = false;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            dtPickUrlaubBis.Enabled = true;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (radioButton2.Enabled == true)
+            {
+                lblUrlaubAusgabe.Text = "Urlaub von " + dtPickUrlaubVon.Value.Date.ToShortDateString() + " bis " + dtPickUrlaubBis.Value.Date.ToShortDateString();
+            }
+            else
+            {
+                lblUrlaubAusgabe.Text = "Urlaub am " + dtPickUrlaubVon.Value.Date.ToShortDateString();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (radioButton4.Enabled == true)
+            {
+                lblAbmDatum.Text = "Kranktage von " + dtPickKrankVon.Value.Date.ToShortDateString() + " bis " + dtPickKrankBis.Value.Date.ToShortDateString();
+            }
+            else
+            {
+                lblAbmDatum.Text = "Kranktag am " + dtPickKrankVon.Value.Date.ToShortDateString();
+            }
         }
     }
 }

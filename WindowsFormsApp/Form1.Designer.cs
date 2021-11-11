@@ -55,7 +55,6 @@ namespace WindowsFormsApp
             this.txtLogin.PlaceholderText = "Anmeldenamen eingeben";
             this.txtLogin.Size = new System.Drawing.Size(190, 27);
             this.txtLogin.TabIndex = 1;
-            this.txtLogin.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtLogin.Enter += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // btnAnmelden
@@ -88,7 +87,6 @@ namespace WindowsFormsApp
             this.txtPassword.Size = new System.Drawing.Size(190, 27);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.Enter += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -102,7 +100,6 @@ namespace WindowsFormsApp
             this.label1.TabIndex = 3;
             this.label1.Text = "Anmeldename";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -128,7 +125,6 @@ namespace WindowsFormsApp
             this.lblSoFT.TabIndex = 6;
             this.lblSoFT.Text = "Phil Morris\' SoFT";
             this.lblSoFT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSoFT.Click += new System.EventHandler(this.SoFT_Click);
             // 
             // lblHelp
             // 
@@ -193,7 +189,6 @@ namespace WindowsFormsApp
             this.Name = "Form1";
             this.Tag = "";
             this.Text = "SoFT";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -36,28 +36,25 @@ namespace WindowsFormsApp
             this.lblAutoLogText = new System.Windows.Forms.Label();
             this.lblAutoLogoff = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.groupKrankheit = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.groupUrlaub = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.dtPickUrlaubBis = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtPickUrlaubVon = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupKrankheit = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.dtPickKrankBis = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblAbmDatum = new System.Windows.Forms.Label();
+            this.dtPickKrankVon = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblKrankheitAnfang = new System.Windows.Forms.Label();
             this.groupArbeitstage = new System.Windows.Forms.GroupBox();
             this.lblTitelArbeitszeit = new System.Windows.Forms.Label();
             this.btnArbeitstage = new System.Windows.Forms.Button();
@@ -91,10 +88,13 @@ namespace WindowsFormsApp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblUrlaubAusgabe = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.groupKrankheit.SuspendLayout();
             this.groupUrlaub.SuspendLayout();
+            this.groupKrankheit.SuspendLayout();
             this.groupArbeitstage.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -107,6 +107,8 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -121,7 +123,6 @@ namespace WindowsFormsApp
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(240, 16);
             this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // panel1
             // 
@@ -156,7 +157,6 @@ namespace WindowsFormsApp
             this.lblAutoLogText.Size = new System.Drawing.Size(181, 22);
             this.lblAutoLogText.TabIndex = 11;
             this.lblAutoLogText.Text = "automatischer Logoff in";
-            this.lblAutoLogText.Click += new System.EventHandler(this.label11_Click);
             // 
             // lblAutoLogoff
             // 
@@ -167,38 +167,218 @@ namespace WindowsFormsApp
             this.lblAutoLogoff.Size = new System.Drawing.Size(34, 22);
             this.lblAutoLogoff.TabIndex = 10;
             this.lblAutoLogoff.Text = "???";
-            this.lblAutoLogoff.Click += new System.EventHandler(this.lblAutoLogoff_Click);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel8.Controls.Add(this.groupKrankheit);
-            this.panel8.Controls.Add(this.groupUrlaub);
             this.panel8.Controls.Add(this.groupArbeitstage);
+            this.panel8.Controls.Add(this.groupUrlaub);
             this.panel8.Location = new System.Drawing.Point(254, 12);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(666, 511);
             this.panel8.TabIndex = 7;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // groupUrlaub
+            // 
+            this.groupUrlaub.Controls.Add(this.panel9);
+            this.groupUrlaub.Controls.Add(this.button1);
+            this.groupUrlaub.Controls.Add(this.radioButton3);
+            this.groupUrlaub.Controls.Add(this.radioButton4);
+            this.groupUrlaub.Controls.Add(this.dtPickUrlaubBis);
+            this.groupUrlaub.Controls.Add(this.label2);
+            this.groupUrlaub.Controls.Add(this.dtPickUrlaubVon);
+            this.groupUrlaub.Controls.Add(this.label3);
+            this.groupUrlaub.Controls.Add(this.label1);
+            this.groupUrlaub.Location = new System.Drawing.Point(12, 11);
+            this.groupUrlaub.Name = "groupUrlaub";
+            this.groupUrlaub.Size = new System.Drawing.Size(639, 487);
+            this.groupUrlaub.TabIndex = 10;
+            this.groupUrlaub.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(34, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 34);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Eingabe";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(34, 162);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(144, 19);
+            this.radioButton3.TabIndex = 22;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Mehrere Tage (default)";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(180, 162);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(85, 19);
+            this.radioButton4.TabIndex = 21;
+            this.radioButton4.Text = "Nur ein Tag";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // dtPickUrlaubBis
+            // 
+            this.dtPickUrlaubBis.CalendarFont = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtPickUrlaubBis.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dtPickUrlaubBis.Location = new System.Drawing.Point(34, 209);
+            this.dtPickUrlaubBis.MinDate = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            this.dtPickUrlaubBis.Name = "dtPickUrlaubBis";
+            this.dtPickUrlaubBis.Size = new System.Drawing.Size(200, 23);
+            this.dtPickUrlaubBis.TabIndex = 20;
+            this.dtPickUrlaubBis.Value = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(34, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Bis:";
+            // 
+            // dtPickUrlaubVon
+            // 
+            this.dtPickUrlaubVon.CalendarFont = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtPickUrlaubVon.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dtPickUrlaubVon.Location = new System.Drawing.Point(34, 136);
+            this.dtPickUrlaubVon.MinDate = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            this.dtPickUrlaubVon.Name = "dtPickUrlaubVon";
+            this.dtPickUrlaubVon.Size = new System.Drawing.Size(200, 23);
+            this.dtPickUrlaubVon.TabIndex = 18;
+            this.dtPickUrlaubVon.Value = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            this.dtPickUrlaubVon.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(34, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 17);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Von:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(17, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(385, 52);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Urlaubstage verwalten\r\n";
             // 
             // groupKrankheit
             // 
-            this.groupKrankheit.Controls.Add(this.label6);
+            this.groupKrankheit.Controls.Add(this.panel10);
             this.groupKrankheit.Controls.Add(this.button2);
+            this.groupKrankheit.Controls.Add(this.radioButton2);
+            this.groupKrankheit.Controls.Add(this.radioButton1);
+            this.groupKrankheit.Controls.Add(this.dtPickKrankBis);
             this.groupKrankheit.Controls.Add(this.label7);
-            this.groupKrankheit.Controls.Add(this.label8);
-            this.groupKrankheit.Controls.Add(this.label9);
-            this.groupKrankheit.Controls.Add(this.label10);
-            this.groupKrankheit.Controls.Add(this.textBox6);
-            this.groupKrankheit.Controls.Add(this.textBox7);
-            this.groupKrankheit.Controls.Add(this.textBox8);
-            this.groupKrankheit.Controls.Add(this.textBox9);
-            this.groupKrankheit.Location = new System.Drawing.Point(12, 10);
+            this.groupKrankheit.Controls.Add(this.dtPickKrankVon);
+            this.groupKrankheit.Controls.Add(this.label6);
+            this.groupKrankheit.Controls.Add(this.lblKrankheitAnfang);
+            this.groupKrankheit.Location = new System.Drawing.Point(12, 11);
             this.groupKrankheit.Name = "groupKrankheit";
-            this.groupKrankheit.Size = new System.Drawing.Size(639, 488);
+            this.groupKrankheit.Size = new System.Drawing.Size(639, 487);
             this.groupKrankheit.TabIndex = 11;
             this.groupKrankheit.TabStop = false;
-            this.groupKrankheit.Enter += new System.EventHandler(this.groupKrankheit_Enter);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(34, 250);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(202, 34);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Eingabe";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(34, 162);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(144, 19);
+            this.radioButton2.TabIndex = 15;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Mehrere Tage (default)";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(180, 162);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 19);
+            this.radioButton1.TabIndex = 14;
+            this.radioButton1.Text = "Nur ein Tag";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // dtPickKrankBis
+            // 
+            this.dtPickKrankBis.CalendarFont = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtPickKrankBis.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dtPickKrankBis.Location = new System.Drawing.Point(34, 209);
+            this.dtPickKrankBis.MinDate = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            this.dtPickKrankBis.Name = "dtPickKrankBis";
+            this.dtPickKrankBis.Size = new System.Drawing.Size(200, 23);
+            this.dtPickKrankBis.TabIndex = 13;
+            this.dtPickKrankBis.Value = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(34, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(28, 17);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Bis:";
+            // 
+            // lblAbmDatum
+            // 
+            this.lblAbmDatum.AutoSize = true;
+            this.lblAbmDatum.Location = new System.Drawing.Point(20, 19);
+            this.lblAbmDatum.Name = "lblAbmDatum";
+            this.lblAbmDatum.Size = new System.Drawing.Size(27, 15);
+            this.lblAbmDatum.TabIndex = 11;
+            this.lblAbmDatum.Text = "piss";
+            // 
+            // dtPickKrankVon
+            // 
+            this.dtPickKrankVon.CalendarFont = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtPickKrankVon.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.dtPickKrankVon.Location = new System.Drawing.Point(34, 136);
+            this.dtPickKrankVon.MinDate = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            this.dtPickKrankVon.Name = "dtPickKrankVon";
+            this.dtPickKrankVon.Size = new System.Drawing.Size(200, 23);
+            this.dtPickKrankVon.TabIndex = 10;
+            this.dtPickKrankVon.Value = new System.DateTime(2021, 11, 11, 0, 0, 0, 0);
+            this.dtPickKrankVon.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label6
             // 
@@ -210,190 +390,15 @@ namespace WindowsFormsApp
             this.label6.TabIndex = 9;
             this.label6.Text = "Krankheitstage verwalten\r\n";
             // 
-            // button2
+            // lblKrankheitAnfang
             // 
-            this.button2.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(180, 269);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 88);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Eingabe";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(323, 184);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 17);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Anzahl Stunden";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(250, 186);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(30, 17);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Jahr";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(197, 186);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 17);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Monat";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(142, 186);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 17);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Tag";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(323, 219);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(56, 23);
-            this.textBox6.TabIndex = 3;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(250, 219);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(37, 23);
-            this.textBox7.TabIndex = 2;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(197, 219);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(37, 23);
-            this.textBox8.TabIndex = 1;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(142, 219);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(37, 23);
-            this.textBox9.TabIndex = 0;
-            // 
-            // groupUrlaub
-            // 
-            this.groupUrlaub.Controls.Add(this.label1);
-            this.groupUrlaub.Controls.Add(this.button1);
-            this.groupUrlaub.Controls.Add(this.label2);
-            this.groupUrlaub.Controls.Add(this.label3);
-            this.groupUrlaub.Controls.Add(this.label4);
-            this.groupUrlaub.Controls.Add(this.label5);
-            this.groupUrlaub.Controls.Add(this.textBox2);
-            this.groupUrlaub.Controls.Add(this.textBox3);
-            this.groupUrlaub.Controls.Add(this.textBox4);
-            this.groupUrlaub.Controls.Add(this.textBox5);
-            this.groupUrlaub.Location = new System.Drawing.Point(12, 10);
-            this.groupUrlaub.Name = "groupUrlaub";
-            this.groupUrlaub.Size = new System.Drawing.Size(639, 482);
-            this.groupUrlaub.TabIndex = 10;
-            this.groupUrlaub.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(17, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(385, 52);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Urlaubstage verwalten\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(180, 269);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 88);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Eingabe";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(323, 184);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Anzahl Stunden";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(250, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 17);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Jahr";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(197, 186);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Monat";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(142, 186);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 17);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Tag";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(323, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(56, 23);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(250, 219);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 23);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(197, 219);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(37, 23);
-            this.textBox4.TabIndex = 1;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(142, 219);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(37, 23);
-            this.textBox5.TabIndex = 0;
+            this.lblKrankheitAnfang.AutoSize = true;
+            this.lblKrankheitAnfang.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblKrankheitAnfang.Location = new System.Drawing.Point(34, 113);
+            this.lblKrankheitAnfang.Name = "lblKrankheitAnfang";
+            this.lblKrankheitAnfang.Size = new System.Drawing.Size(30, 17);
+            this.lblKrankheitAnfang.TabIndex = 7;
+            this.lblKrankheitAnfang.Text = "Von:";
             // 
             // groupArbeitstage
             // 
@@ -407,12 +412,11 @@ namespace WindowsFormsApp
             this.groupArbeitstage.Controls.Add(this.txtJahr);
             this.groupArbeitstage.Controls.Add(this.txtMonat);
             this.groupArbeitstage.Controls.Add(this.txtTag);
-            this.groupArbeitstage.Location = new System.Drawing.Point(12, 10);
+            this.groupArbeitstage.Location = new System.Drawing.Point(12, 11);
             this.groupArbeitstage.Name = "groupArbeitstage";
-            this.groupArbeitstage.Size = new System.Drawing.Size(639, 488);
+            this.groupArbeitstage.Size = new System.Drawing.Size(639, 487);
             this.groupArbeitstage.TabIndex = 0;
             this.groupArbeitstage.TabStop = false;
-            this.groupArbeitstage.Enter += new System.EventHandler(this.groupArbeitstage_Enter);
             // 
             // lblTitelArbeitszeit
             // 
@@ -423,7 +427,6 @@ namespace WindowsFormsApp
             this.lblTitelArbeitszeit.Size = new System.Drawing.Size(375, 52);
             this.lblTitelArbeitszeit.TabIndex = 9;
             this.lblTitelArbeitszeit.Text = "Arbeitstage verwalten";
-            this.lblTitelArbeitszeit.Click += new System.EventHandler(this.label5_Click);
             // 
             // btnArbeitstage
             // 
@@ -512,7 +515,6 @@ namespace WindowsFormsApp
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(218, 201);
             this.panel7.TabIndex = 4;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // monthCalendar1
             // 
@@ -520,14 +522,13 @@ namespace WindowsFormsApp
             this.monthCalendar1.Location = new System.Drawing.Point(23, 20);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // lblSecond
             // 
             this.lblSecond.AutoSize = true;
             this.lblSecond.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblSecond.Font = new System.Drawing.Font("Marlboro", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblSecond.Location = new System.Drawing.Point(1079, 158);
+            this.lblSecond.Location = new System.Drawing.Point(1081, 155);
             this.lblSecond.Name = "lblSecond";
             this.lblSecond.Size = new System.Drawing.Size(65, 29);
             this.lblSecond.TabIndex = 9;
@@ -538,12 +539,11 @@ namespace WindowsFormsApp
             this.lblTime.AutoSize = true;
             this.lblTime.BackColor = System.Drawing.Color.LavenderBlush;
             this.lblTime.Font = new System.Drawing.Font("Marlboro", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.Location = new System.Drawing.Point(928, 99);
+            this.lblTime.Location = new System.Drawing.Point(944, 103);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(185, 69);
             this.lblTime.TabIndex = 0;
             this.lblTime.Text = "lblTime";
-            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
             // lblAngemeldetals
             // 
@@ -554,7 +554,6 @@ namespace WindowsFormsApp
             this.lblAngemeldetals.Size = new System.Drawing.Size(64, 23);
             this.lblAngemeldetals.TabIndex = 8;
             this.lblAngemeldetals.Text = "LoginAs";
-            this.lblAngemeldetals.Click += new System.EventHandler(this.lblAngemeldetals_Click);
             // 
             // lblAbm
             // 
@@ -660,7 +659,6 @@ namespace WindowsFormsApp
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnUrlaub
             // 
@@ -697,7 +695,6 @@ namespace WindowsFormsApp
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnArbeitszeit
             // 
@@ -728,12 +725,13 @@ namespace WindowsFormsApp
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(181, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // button4
             // 
@@ -749,6 +747,33 @@ namespace WindowsFormsApp
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblUrlaubAusgabe
+            // 
+            this.lblUrlaubAusgabe.AutoSize = true;
+            this.lblUrlaubAusgabe.Location = new System.Drawing.Point(20, 19);
+            this.lblUrlaubAusgabe.Name = "lblUrlaubAusgabe";
+            this.lblUrlaubAusgabe.Size = new System.Drawing.Size(27, 15);
+            this.lblUrlaubAusgabe.TabIndex = 24;
+            this.lblUrlaubAusgabe.Text = "piss";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.Controls.Add(this.lblUrlaubAusgabe);
+            this.panel9.Location = new System.Drawing.Point(286, 113);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(347, 368);
+            this.panel9.TabIndex = 25;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.lblAbmDatum);
+            this.panel10.Location = new System.Drawing.Point(286, 113);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(347, 368);
+            this.panel10.TabIndex = 26;
             // 
             // Startseite
             // 
@@ -774,10 +799,10 @@ namespace WindowsFormsApp
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.groupKrankheit.ResumeLayout(false);
-            this.groupKrankheit.PerformLayout();
             this.groupUrlaub.ResumeLayout(false);
             this.groupUrlaub.PerformLayout();
+            this.groupKrankheit.ResumeLayout(false);
+            this.groupKrankheit.PerformLayout();
             this.groupArbeitstage.ResumeLayout(false);
             this.groupArbeitstage.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -791,6 +816,10 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -836,27 +865,27 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.GroupBox groupUrlaub;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.GroupBox groupKrankheit;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label lblAutoLogoff;
         private System.Windows.Forms.Label lblAutoLogText;
+        private System.Windows.Forms.Label lblAbmDatum;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.DateTimePicker dtPickUrlaubBis;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtPickUrlaubVon;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DateTimePicker dtPickKrankBis;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtPickKrankVon;
+        private System.Windows.Forms.Label lblKrankheitAnfang;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label lblUrlaubAusgabe;
+        private System.Windows.Forms.Panel panel10;
     }
 }
