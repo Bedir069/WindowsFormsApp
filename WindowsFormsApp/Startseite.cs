@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace WindowsFormsApp
 {
@@ -30,6 +31,7 @@ namespace WindowsFormsApp
             timer1.Start();
             button5_Click(sender, e); // alle Fenster schließen bei erneutem Login
         }
+
         private void timerReset(object sender,EventArgs e)
         {
             EndOfTime = DateTime.Now.AddMinutes(5);
@@ -51,17 +53,27 @@ namespace WindowsFormsApp
             }
         }
         public void button5_Click(object sender, EventArgs e)
-        {      
+        {
+            if (btnUrlaub.Text == "Urlaubstage verwalten")
+            {
                 timerReset(null, null);
                 groupUrlaub.Hide();
                 groupKrankheit.Hide();
-                groupArbeitstage.Hide();           
+                groupArbeitstage.Hide();
+            }
+            else
+            {
+                groupSuperUrlaub.Hide();
+                groupSuperArbeit.Hide();
+                groupSuperKrank.Hide();
+            }
         }
         
         private void btnUrlaub_Click(object sender, EventArgs e)
         {
             if (btnUrlaub.Text == "Urlaubstage verwalten")
             {
+                lstUrlaub();
                 timerReset(null, null);
                 groupUrlaub.Show();
                 groupArbeitstage.Hide();
@@ -103,8 +115,6 @@ namespace WindowsFormsApp
         {
             lblTime.Text = DateTime.Now.ToString("HH:mm");
             lblSecond.Text = DateTime.Now.ToString("ss");
-            //lblDate.Text = DateTime.Now.ToString("MMM dd yyyy");
-            //lblDay.Text = DateTime.Now.ToString("dddd");
             lblSecond.Location = new Point(lblTime.Location.X + lblTime.Width - 5, lblSecond.Location.Y);
         }
 
@@ -121,7 +131,7 @@ namespace WindowsFormsApp
             {
                 button5_Click(null, null);
                 groupSuperKrank.Show();
-                groupSuperArbeit.Hide();
+                groupSuperArbeit.Show();
                 groupSuperUrlaub.Hide();
             }
         }
@@ -135,13 +145,27 @@ namespace WindowsFormsApp
         {
             button5_Click(null, null);
         }
-
+        public void lstUrlaub() { 
+            //public Form1 form1 { get; set; }
+            string constring = @"Data Source=DITIB-01\SQLEXPRESSNR2;Initial Catalog=master;Integrated Security=True";
+            SqlConnection con = new SqlConnection(constring);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT Datum,Anmeldename FROM Kalendereinträge WHERE Anmeldename='" + form1.txtLogin.Text + "'", con);
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            ds.Tables.Add(dt);
+            dataGridView1.ReadOnly = true;
+        }
+    
+        
         private void btnUrl_Click(object sender, EventArgs e)
         {
+            
             lblCalendarUrlaub.Text = 
                 "Urlaub von " + CalendarUrlaub.SelectionStart.ToShortDateString() + " bis " + CalendarUrlaub.SelectionEnd.ToShortDateString();         
+            
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             lblCalendarKrank.Text = 
@@ -150,13 +174,17 @@ namespace WindowsFormsApp
 
         private void btnArb_Click(object sender, EventArgs e)
         {
-
+            txtStunden.Text = "";
             lblCalendarArbeit.Text =
                 "Gearbeitet an Tagen: " + CalendarArbeit.SelectionStart.ToShortDateString() + " - " + CalendarArbeit.SelectionEnd.ToShortDateString() + " für " + txtStunden.Text + " Stunden" ;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            groupKrankheit.Hide();
+            groupArbeitstage.Hide();
+            groupUrlaub.Hide();
+
             btnSupertools.Hide();
             button3.Show();
 
@@ -167,7 +195,6 @@ namespace WindowsFormsApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-
             groupSuperArbeit.Hide();
             groupSuperKrank.Hide();
             groupSuperUrlaub.Hide();
