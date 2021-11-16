@@ -19,6 +19,13 @@ namespace WindowsFormsApp
         DateTime EndOfTime;
         private void Startseite_Load(object sender, EventArgs e)
         {
+            groupArbeitstage.Hide();
+            groupUrlaub.Hide();
+            groupKrankheit.Hide();
+            groupSuperArbeit.Hide();
+            groupSuperUrlaub.Hide();
+            groupSuperKrank.Hide();
+          
             timerReset(null, null);
             timer1.Start();
             button5_Click(sender, e); // alle Fenster schließen bei erneutem Login
@@ -44,28 +51,47 @@ namespace WindowsFormsApp
             }
         }
         public void button5_Click(object sender, EventArgs e)
-        {
-            timerReset(null, null);
-            groupUrlaub.Hide();
-            groupKrankheit.Hide();
-            groupArbeitstage.Hide();
+        {      
+                timerReset(null, null);
+                groupUrlaub.Hide();
+                groupKrankheit.Hide();
+                groupArbeitstage.Hide();           
         }
-
+        
         private void btnUrlaub_Click(object sender, EventArgs e)
         {
-            timerReset(null, null);
-            groupUrlaub.Show();
-            groupArbeitstage.Hide();
-            groupKrankheit.Hide();
+            if (btnUrlaub.Text == "Urlaubstage verwalten")
+            {
+                timerReset(null, null);
+                groupUrlaub.Show();
+                groupArbeitstage.Hide();
+                groupKrankheit.Hide();
+            }
+            else
+            {
+                button5_Click(null, null);
+                groupSuperUrlaub.Show();
+                groupSuperArbeit.Hide();
+                groupSuperKrank.Hide();
+            }
         }
 
 
         private void btnArbeitszeit_Click(object sender, EventArgs e)
         {
-            timerReset(null, null);
-            groupArbeitstage.Show();
-            groupUrlaub.Hide();
-            groupKrankheit.Hide();
+            if (btnArbeitszeit.Text == "Arbeitszeit verwalten")
+            {
+                timerReset(null, null);
+                groupArbeitstage.Show();
+                groupUrlaub.Hide();
+                groupKrankheit.Hide();
+            } else
+            {
+                button5_Click(null, null);
+                groupSuperArbeit.Show();
+                groupSuperUrlaub.Hide();
+                groupSuperKrank.Hide();
+            }
         }
 
         private void lblAbm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,10 +110,20 @@ namespace WindowsFormsApp
 
         private void btnKrankheit_Click(object sender, EventArgs e)
         {
-            timerReset(null, null);
-            groupKrankheit.Show();
-            groupArbeitstage.Hide();
-            groupUrlaub.Hide();
+            if (btnKrankheit.Text == "Krankheitstage verwalten")
+            {
+                timerReset(null, null);
+                groupKrankheit.Show();
+                groupArbeitstage.Hide();
+                groupUrlaub.Hide();
+            }
+            else
+            {
+                button5_Click(null, null);
+                groupSuperKrank.Show();
+                groupSuperArbeit.Hide();
+                groupSuperUrlaub.Hide();
+            }
         }
 
         private void MouseBewegt(object sender, MouseEventArgs e)
@@ -114,8 +150,32 @@ namespace WindowsFormsApp
 
         private void btnArb_Click(object sender, EventArgs e)
         {
+
             lblCalendarArbeit.Text =
                 "Gearbeitet an Tagen: " + CalendarArbeit.SelectionStart.ToShortDateString() + " - " + CalendarArbeit.SelectionEnd.ToShortDateString() + " für " + txtStunden.Text + " Stunden" ;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnSupertools.Hide();
+            button3.Show();
+
+            btnArbeitszeit.Text = "Alle Arbeitszeiten verwalten";
+            btnUrlaub.Text = "Alle Urlaubstage verwalten";
+            btnKrankheit.Text = "Alle Krankheitstage verwalten";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            groupSuperArbeit.Hide();
+            groupSuperKrank.Hide();
+            groupSuperUrlaub.Hide();
+
+            btnSupertools.Show();
+            btnArbeitszeit.Text = "Arbeitszeit verwalten";
+            btnUrlaub.Text = "Urlaubstage verwalten";
+            btnKrankheit.Text = "Krankheitstage verwalten";
         }
     }
 }
