@@ -14,14 +14,16 @@ namespace WindowsFormsApp
 {
 
     public partial class Form1 : Form
-    {       
+    {
+        public static string passingLogin;
+        public static string passingPosition;
         Startseite startseite = new Startseite();
         Help help = new Help();
         public Form1()
         {
             InitializeComponent();
         }
-        string constring = @"Data Source=DITIB-01\SQLEXPRESSNR2;Initial Catalog=master;Integrated Security=True";
+        string constring = @"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=Benutzerdatenbank;Integrated Security=True";
         private void button1_Click(object sender, EventArgs e)
         {
             //startseite.ShowDialog();        
@@ -34,19 +36,20 @@ namespace WindowsFormsApp
             DataTable dt2 = new DataTable(); //this is creating a virtual table  
             sda.Fill(dt);
             sda2.Fill(dt2);
+
             if (dt.Rows[0][0].ToString() == "1")
             {
                 startseite.lblAngemeldetals.Text = "Angemeldet als " + dt2.Rows[0][0].ToString();
+                passingLogin = txtLogin.Text;
+                passingPosition = dt2.Rows[0][0].ToString();
                 startseite.ShowDialog();
                 lblPasserror.Hide();
             }
             else
+            {
                 lblPasserror.Show();
-            lblPasserror.Text = "Invalid username or password";
-        }
-        public string globaltxtLogin
-        {
-            get { return txtLogin.Text; }
+                lblPasserror.Text = "Invalid username or password";
+            }
         }
         
         private void lblHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
