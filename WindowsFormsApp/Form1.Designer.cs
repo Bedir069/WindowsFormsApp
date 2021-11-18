@@ -36,9 +36,9 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSoFT = new System.Windows.Forms.Label();
-            this.lblHelp = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPasserror = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtLogin
@@ -54,7 +54,6 @@ namespace WindowsFormsApp
             this.txtLogin.PlaceholderText = "Anmeldenamen eingeben";
             this.txtLogin.Size = new System.Drawing.Size(167, 23);
             this.txtLogin.TabIndex = 1;
-            this.txtLogin.Enter += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // btnAnmelden
             // 
@@ -63,9 +62,9 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnmelden.AutoSize = true;
             this.btnAnmelden.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.btnAnmelden.Location = new System.Drawing.Point(518, 390);
+            this.btnAnmelden.Location = new System.Drawing.Point(515, 391);
             this.btnAnmelden.Name = "btnAnmelden";
-            this.btnAnmelden.Size = new System.Drawing.Size(166, 29);
+            this.btnAnmelden.Size = new System.Drawing.Size(170, 33);
             this.btnAnmelden.TabIndex = 0;
             this.btnAnmelden.Text = "Anmelden";
             this.btnAnmelden.UseVisualStyleBackColor = true;
@@ -123,20 +122,6 @@ namespace WindowsFormsApp
             this.lblSoFT.Text = "Phil Morris\' SoFT";
             this.lblSoFT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblHelp
-            // 
-            this.lblHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHelp.AutoSize = true;
-            this.lblHelp.Location = new System.Drawing.Point(518, 363);
-            this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(111, 15);
-            this.lblHelp.TabIndex = 10;
-            this.lblHelp.TabStop = true;
-            this.lblHelp.Text = "Brauchen Sie Hilfe ?";
-            this.lblHelp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblHelp_LinkClicked);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -161,6 +146,17 @@ namespace WindowsFormsApp
             this.lblPasserror.Size = new System.Drawing.Size(0, 15);
             this.lblPasserror.TabIndex = 12;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(518, 366);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(123, 19);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Passwort anzeigen";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -169,9 +165,9 @@ namespace WindowsFormsApp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1217, 554);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.lblPasserror);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblHelp);
             this.Controls.Add(this.lblSoFT);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -179,6 +175,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.btnAnmelden);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Tag = "";
@@ -196,9 +193,9 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSoFT;
-        private System.Windows.Forms.LinkLabel lblHelp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPasserror;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

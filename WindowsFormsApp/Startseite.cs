@@ -24,7 +24,7 @@ namespace WindowsFormsApp
             groupSuperArbeit.Hide();
             groupSuperUrlaub.Hide();
             groupSuperKrank.Hide();
-            groupÜbersicht.Hide();
+            groupÜbersicht1.Hide();
             groupSuperÜbersicht.Hide();
         }
         DateTime EndOfTime;
@@ -35,11 +35,16 @@ namespace WindowsFormsApp
                 btnSupertools.Show();
                 btnSupervisorEnd.Show();
             }
-            lblWillkommen.Text = "Willkommen zurück, " + Form1.passingLogin + "!";
+            else
+            {
+                btnSupertools.Hide();
+                btnSupervisorEnd.Hide();
+            }
             allgroupHide();
             timerReset(null, null);
             timer1.Start();
-            button5_Click(sender, e); // alle Fenster schließen bei erneutem Login
+            lblWillkommen.Text = "Willkommen zurück, " + Form1.passingLogin + "!";
+            btnÜbersicht_Click(sender, e); // alle Fenster schließen bei erneutem Login
         }
 
         private void timerReset(object sender, EventArgs e)
@@ -62,13 +67,23 @@ namespace WindowsFormsApp
                 lblAbm_LinkClicked(null, null);
             }
         }
-        public void button5_Click(object sender, EventArgs e)
+        public void getNeuig()
+        {
+            SqlConnection con = new SqlConnection(constring);
+            SqlDataAdapter sda2 = new SqlDataAdapter("SELECT Passwort FROM Benutzerdaten WHERE Anmeldename='Neuigkeiten'", con);
+            DataTable dt1 = new DataTable();
+            sda2.Fill(dt1);
+            txtAusgabeEmploy.Text = dt1.Rows[0][0].ToString();
+        }
+        public void btnÜbersicht_Click(object sender, EventArgs e)
         {
             if (btnUrlaub.Text == "Urlaubstage verwalten")
             {
+                getNeuig();
+                lstAllOne();
                 timerReset(null, null);
                 allgroupHide();
-                groupÜbersicht.Show();
+                groupÜbersicht1.Show();
             }
             else
             {
@@ -89,6 +104,7 @@ namespace WindowsFormsApp
             }
             else
             {
+                lstSuperUrlaub(null);
                 allgroupHide();
                 groupSuperUrlaub.Show();
             }
@@ -111,6 +127,22 @@ namespace WindowsFormsApp
                 groupSuperArbeit.Show();
             }
         }
+        private void btnKrankheit_Click(object sender, EventArgs e)
+        {
+            if (btnKrankheit.Text == "Krankheitstage verwalten")
+            {
+                lstKrank();
+                timerReset(null, null);
+                allgroupHide();
+                groupKrankheit.Show();
+            }
+            else
+            {
+                lstSuperKrank();
+                allgroupHide();
+                groupSuperKrank.Show();             
+            }
+        }
 
         private void lblAbm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -124,21 +156,6 @@ namespace WindowsFormsApp
             lblSecond.Location = new Point(lblTime.Location.X + lblTime.Width - 5, lblSecond.Location.Y);
         }
 
-        private void btnKrankheit_Click(object sender, EventArgs e)
-        {
-            if (btnKrankheit.Text == "Krankheitstage verwalten")
-            {
-                lstKrank();
-                timerReset(null, null);
-                allgroupHide();
-                groupKrankheit.Show();
-            }
-            else
-            {
-                allgroupHide();
-                groupSuperKrank.Show();
-            }
-        }
 
         private void MouseBewegt(object sender, MouseEventArgs e)
         {
@@ -147,7 +164,7 @@ namespace WindowsFormsApp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            button5_Click(null, null);
+            btnÜbersicht_Click(null, null);
         }
         string constring = @"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
         public void lstArbeit()
@@ -269,7 +286,7 @@ namespace WindowsFormsApp
             lstUrlaub();
         }
         public void lstKrank()
-        {
+        {           
             SqlConnection con = new SqlConnection(constring);
             SqlDataAdapter sda = new SqlDataAdapter("SELECT DISTINCT Datum,Anmeldename FROM Kalendereinträge WHERE Anmeldename='"
                 + Form1.passingLogin + "' AND Typ ='Krank'", con);
@@ -330,7 +347,7 @@ namespace WindowsFormsApp
         public void lstAll()
         {
             SqlConnection con = new SqlConnection(constring);
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT DISTINCT Anmeldename FROM Kalendereinträge", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT Anmeldename,Position FROM Benutzerdaten", con);
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             sda.Fill(dt);
@@ -356,6 +373,7 @@ namespace WindowsFormsApp
             SqlDataAdapter sda = new SqlDataAdapter("SELECT DISTINCT Datum, Anmeldename, Stunden FROM Kalendereinträge WHERE Typ = 'Arbeit'", con);
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
+            if(sda != null)
             sda.Fill(dt);
             dgvSuperArbeit.DataSource = dt;
             ds.Tables.Add(dt);
@@ -381,7 +399,7 @@ namespace WindowsFormsApp
                 SqlDataAdapter sda = new SqlDataAdapter();
                 string sql = null;
 
-                sql = "DELETE Kalendereinträge WHERE Datum='" + dgvSuperArbeit.CurrentCell.Value.ToString() + "'";
+                sql = "DELETE Kalendereinträge WHERE Datum='" + dgvSuperArbeit.CurrentCell.Value.ToString() + "' and Typ='Arbeit'";
 
 
                 con.Open();
@@ -390,7 +408,7 @@ namespace WindowsFormsApp
             }
             lstSuperArbeit();
         }
-        private void button5_Click_1(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e) //alles Löschen Arbeit
         {
             if (dgvSuperArbeit.RowCount != 0)
             {
@@ -407,35 +425,227 @@ namespace WindowsFormsApp
             }
             lstSuperArbeit();
         }
+
+        public void lstSuperKrank()
+        {
+            SqlConnection con = new SqlConnection(constring);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT DISTINCT Datum, Anmeldename FROM Kalendereinträge WHERE Typ = 'Krank'", con);
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            if (sda != null)
+                sda.Fill(dt);
+            dgvSuperKrank.DataSource = dt;
+            ds.Tables.Add(dt);
+            dgvSuperKrank.ReadOnly = true;
+            for (int i = 0; i < dgvSuperKrank.Columns.Count - 1; i++)
+            {
+                dgvSuperKrank.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            dgvSuperKrank.Columns[dgvSuperKrank.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            for (int i = 0; i < dgvSuperKrank.Columns.Count; i++)
+            {
+                int colw = dgvSuperKrank.Columns[i].Width;
+                dgvSuperKrank.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvSuperKrank.Columns[i].Width = colw;
+            }
+        }
+
+        private void btnDelSuperKrank_Click(object sender, EventArgs e)
+        {
+            if (dgvSuperKrank.RowCount != 0)
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                string sql = null;
+
+                sql = "DELETE Kalendereinträge WHERE Datum='" + dgvSuperKrank.CurrentCell.Value.ToString() + "' and Typ='Krank'";
+
+
+                con.Open();
+                sda.InsertCommand = new SqlCommand(sql, con);
+                sda.InsertCommand.ExecuteNonQuery();
+            }
+            lstSuperKrank();
+        }
+
+        private void btnDelAllSuperKrank_Click(object sender, EventArgs e)
+        {
+            if (dgvSuperKrank.RowCount != 0)
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                string sql = null;
+
+                sql = "DELETE Kalendereinträge WHERE Typ = 'Krank'";
+
+
+                con.Open();
+                sda.InsertCommand = new SqlCommand(sql, con);
+                sda.InsertCommand.ExecuteNonQuery();
+            }
+            lstSuperKrank();
+        }
+        public void lstSuperUrlaub(string sdastr)
+        {
+            if (sdastr == null)
+            {
+                sdastr = "SELECT DISTINCT Datum, Anmeldename, Genehmigt FROM Kalendereinträge WHERE Typ = 'Urlaub'";
+            }
+            SqlConnection con = new SqlConnection(constring);
+            SqlDataAdapter sda = new SqlDataAdapter(sdastr, con);
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            if (sda != null)
+                sda.Fill(dt);
+            dgvSuperUrl.DataSource = dt;
+            ds.Tables.Add(dt);
+            dgvSuperUrl.ReadOnly = true;
+            for (int i = 0; i < dgvSuperUrl.Columns.Count - 1; i++)
+            {
+                dgvSuperUrl.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            dgvSuperUrl.Columns[dgvSuperUrl.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            for (int i = 0; i < dgvSuperUrl.Columns.Count; i++)
+            {
+                int colw = dgvSuperUrl.Columns[i].Width;
+                dgvSuperUrl.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvSuperUrl.Columns[i].Width = colw;
+            }
+        }
+
+        private void btnDelSuperUrlaub_Click(object sender, EventArgs e)
+        {
+            if (dgvSuperUrl.RowCount != 0)
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                string sql = null;
+
+                sql = "DELETE Kalendereinträge WHERE Datum='" + dgvSuperUrl.CurrentCell.Value.ToString() + "' and Typ='Urlaub'";
+
+
+                con.Open();
+                sda.InsertCommand = new SqlCommand(sql, con);
+                sda.InsertCommand.ExecuteNonQuery();
+            }
+            lstSuperUrlaub(null);
+        }
+
+        private void btnDelAllSuperUrlaub_Click(object sender, EventArgs e)
+        {
+            if (dgvSuperUrl.RowCount != 0)
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                string sql = null;
+
+                sql = "DELETE Kalendereinträge WHERE Typ = 'Urlaub'";
+
+
+                con.Open();
+                sda.InsertCommand = new SqlCommand(sql, con);
+                sda.InsertCommand.ExecuteNonQuery();
+            }
+            lstSuperUrlaub(null);
+        }
+        private void btnGeneSuperUrl_Click(object sender, EventArgs e)
+        {
+            if (dgvSuperUrl.RowCount != 0)
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                string sql = null;
+
+                sql = "UPDATE Kalendereinträge SET Genehmigt='Genehmigt' WHERE Datum='" + 
+                    dgvSuperUrl.CurrentCell.Value.ToString() + "' and Typ='Urlaub'";
+
+
+                con.Open();
+                sda.InsertCommand = new SqlCommand(sql, con);
+                sda.InsertCommand.ExecuteNonQuery();
+            }
+            lstSuperUrlaub(null);
+        }
+
+        private void btnAblehnenSuperUrl_Click(object sender, EventArgs e)
+        {
+            if (dgvSuperUrl.RowCount != 0)
+            {
+                SqlConnection con = new SqlConnection(constring);
+                SqlDataAdapter sda = new SqlDataAdapter();
+                string sql = null;
+
+                sql = "UPDATE Kalendereinträge SET Genehmigt='Abgelehnt' WHERE Datum='" 
+                    + dgvSuperUrl.CurrentCell.Value.ToString() + "' and Typ='Urlaub'";
+
+
+                con.Open();
+                sda.InsertCommand = new SqlCommand(sql, con);
+                sda.InsertCommand.ExecuteNonQuery();
+            }
+            lstSuperUrlaub(null);
+        }
+
         private void button1_Click(object sender, EventArgs e) // Supervisorbuttonclick
         {
-            allgroupHide();
-            button5_Click(null, null);
-            btnSupervisorEnd.Show();
-            btnSupertools.Hide();
-
             btnArbeitszeit.Text = "Alle Arbeitszeiten verwalten";
             btnUrlaub.Text = "Alle Urlaubstage verwalten";
             btnKrankheit.Text = "Alle Krankheitstage verwalten";
+
+            allgroupHide();
+            btnÜbersicht_Click(null, null);
+            btnSupervisorEnd.Show();
+            btnSupertools.Hide();
+
         }
 
-        private void button3_Click(object sender, EventArgs e) //Beenden
+        private void button3_Click(object sender, EventArgs e) //Supervisor Beenden
         {
-            button5_Click(null, null); //Übersicht öffnen
+            allgroupHide();
             btnSupertools.Show();
             btnSupervisorEnd.Hide();
             btnArbeitszeit.Text = "Arbeitszeit verwalten";
             btnUrlaub.Text = "Urlaubstage verwalten";
             btnKrankheit.Text = "Krankheitstage verwalten";
+            btnÜbersicht_Click(null, null); //Übersicht öffnen
         }
 
         private void button1_Click_1(object sender, EventArgs e) //Neuigkeiten ändern
         {
-            txtAusgabeNeuig.Text = txtEingabeNeuig.Text;
-            txtEingabeNeuig.Text = "";
+            //txtAusgabeNeuig.Text = txtEingabeNeuig.Text;
+            SqlConnection con = new SqlConnection(constring);
+            SqlDataAdapter sda = new SqlDataAdapter("UPDATE Benutzerdaten SET Passwort='"  + txtEingabeNeuig.Text + "' WHERE Anmeldename='Neuigkeiten'", con);
+            SqlDataAdapter sda2 = new SqlDataAdapter("SELECT Passwort FROM Benutzerdaten WHERE Anmeldename='Neuigkeiten'", con);
+            DataTable dt1 = new DataTable();
+            sda.Fill(dt1);
+            sda2.Fill(dt1);
+            txtAusgabeNeuig.Text = dt1.Rows[0][0].ToString();
+            //txtEingabeNeuig.Text = "";
         }
+        public void lstAllOne()
+        {
+            SqlConnection con = new SqlConnection(constring);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT Datum,Anmeldename,Typ FROM Kalendereinträge WHERE Anmeldename='" + Form1.passingLogin + "'", con);
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            sda.Fill(dt);
+            dgvÜbersicht1.DataSource = dt;
+            ds.Tables.Add(dt);
+            dgvÜbersicht1.ReadOnly = true;
+            for (int i = 0; i < dgvÜbersicht1.Columns.Count - 1; i++)
+            {
+                dgvÜbersicht1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            dgvÜbersicht1.Columns[dgvÜbersicht1.Columns.Count - 1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-
-
+            for (int i = 0; i < dgvÜbersicht1.Columns.Count; i++)
+            {
+                int colw = dgvÜbersicht1.Columns[i].Width;
+                dgvÜbersicht1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+                dgvÜbersicht1.Columns[i].Width = colw;
+            }
+        }
     }
 }

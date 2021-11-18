@@ -18,12 +18,12 @@ namespace WindowsFormsApp
         public static string passingLogin;
         public static string passingPosition;
         Startseite startseite = new Startseite();
-        Help help = new Help();
+
         public Form1()
         {
             InitializeComponent();
         }
-        string constring = @"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=Benutzerdatenbank;Integrated Security=True";
+        string constring = @"Data Source=DESKTOP-B8UQBUJ\SQLEXPRESS;Initial Catalog=master;Integrated Security=True";
         private void button1_Click(object sender, EventArgs e)
         {
             //startseite.ShowDialog();        
@@ -50,17 +50,18 @@ namespace WindowsFormsApp
                 lblPasserror.Show();
                 lblPasserror.Text = "Invalid username or password";
             }
-        }
-        
-        private void lblHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+            checkBox1.Checked = false;
+        }  
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            help.ShowDialog();
+            if (checkBox1.Checked == true)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
         }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

@@ -33,13 +33,31 @@ namespace WindowsFormsApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Startseite));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSupertools = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.groupSuperÜbersicht = new System.Windows.Forms.GroupBox();
+            this.btnNeuigRef = new System.Windows.Forms.Button();
+            this.dgvÜbersicht = new System.Windows.Forms.DataGridView();
+            this.txtEingabeNeuig = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtAusgabeNeuig = new System.Windows.Forms.RichTextBox();
+            this.lblWillkommen = new System.Windows.Forms.Label();
+            this.groupSuperKrank = new System.Windows.Forms.GroupBox();
+            this.btnDelAllSuperKrank = new System.Windows.Forms.Button();
+            this.btnDelSuperKrank = new System.Windows.Forms.Button();
+            this.dgvSuperKrank = new System.Windows.Forms.DataGridView();
+            this.lblSuperKrank = new System.Windows.Forms.Label();
             this.groupSuperArbeit = new System.Windows.Forms.GroupBox();
             this.btnDelAll = new System.Windows.Forms.Button();
             this.btnDelSupArb = new System.Windows.Forms.Button();
             this.dgvSuperArbeit = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupSuperUrlaub = new System.Windows.Forms.GroupBox();
+            this.btnAblehnenSuperUrl = new System.Windows.Forms.Button();
+            this.btnDelSuperUrl = new System.Windows.Forms.Button();
+            this.btnDelAllSuperUrl = new System.Windows.Forms.Button();
+            this.btnGeneSuperUrl = new System.Windows.Forms.Button();
+            this.dgvSuperUrl = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupArbeitstage = new System.Windows.Forms.GroupBox();
             this.dgvArbeit = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,14 +67,13 @@ namespace WindowsFormsApp
             this.lblTitelArbeitszeit = new System.Windows.Forms.Label();
             this.lblAnzahlStunden = new System.Windows.Forms.Label();
             this.txtStunden = new System.Windows.Forms.TextBox();
-            this.groupÜbersicht = new System.Windows.Forms.GroupBox();
-            this.groupSuperÜbersicht = new System.Windows.Forms.GroupBox();
-            this.txtAusgabeNeuig = new System.Windows.Forms.RichTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtEingabeNeuig = new System.Windows.Forms.RichTextBox();
-            this.dgvÜbersicht = new System.Windows.Forms.DataGridView();
-            this.lblWillkommen = new System.Windows.Forms.Label();
+            this.groupKrankheit = new System.Windows.Forms.GroupBox();
+            this.dgvKrank = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnDelKrank = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.CalendarKrank = new System.Windows.Forms.MonthCalendar();
             this.groupUrlaub = new System.Windows.Forms.GroupBox();
             this.dgvUrlaub = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,17 +81,7 @@ namespace WindowsFormsApp
             this.CalendarUrlaub = new System.Windows.Forms.MonthCalendar();
             this.btnUrl = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupSuperUrlaub = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupKrankheit = new System.Windows.Forms.GroupBox();
-            this.dgvKrank = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnDelKrank = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.CalendarKrank = new System.Windows.Forms.MonthCalendar();
-            this.groupSuperKrank = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnSupertools = new System.Windows.Forms.Button();
             this.lblAutoLogText = new System.Windows.Forms.Label();
             this.lblAutoLogoff = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -98,23 +105,34 @@ namespace WindowsFormsApp
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSupervisorEnd = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupÜbersicht = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupÜbersicht1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtAusgabeEmploy = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dgvÜbersicht1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.groupSuperArbeit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperArbeit)).BeginInit();
-            this.groupArbeitstage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArbeit)).BeginInit();
-            this.groupÜbersicht.SuspendLayout();
             this.groupSuperÜbersicht.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvÜbersicht)).BeginInit();
-            this.groupUrlaub.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlaub)).BeginInit();
+            this.groupSuperKrank.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperKrank)).BeginInit();
+            this.groupSuperArbeit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperArbeit)).BeginInit();
             this.groupSuperUrlaub.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperUrl)).BeginInit();
+            this.groupArbeitstage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbeit)).BeginInit();
             this.groupKrankheit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKrank)).BeginInit();
-            this.groupSuperKrank.SuspendLayout();
+            this.groupUrlaub.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlaub)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -126,6 +144,8 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupÜbersicht1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvÜbersicht1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -147,8 +167,8 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.DarkRed;
-            this.panel1.Controls.Add(this.btnSupertools);
             this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.btnSupertools);
             this.panel1.Controls.Add(this.lblAutoLogText);
             this.panel1.Controls.Add(this.lblAutoLogoff);
             this.panel1.Controls.Add(this.panel7);
@@ -167,32 +187,173 @@ namespace WindowsFormsApp
             this.panel1.Size = new System.Drawing.Size(1178, 546);
             this.panel1.TabIndex = 1;
             // 
-            // btnSupertools
-            // 
-            this.btnSupertools.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnSupertools.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSupertools.Location = new System.Drawing.Point(928, 410);
-            this.btnSupertools.Name = "btnSupertools";
-            this.btnSupertools.Size = new System.Drawing.Size(218, 113);
-            this.btnSupertools.TabIndex = 12;
-            this.btnSupertools.Text = "Supervisortools";
-            this.btnSupertools.UseVisualStyleBackColor = false;
-            this.btnSupertools.Visible = false;
-            this.btnSupertools.Click += new System.EventHandler(this.button1_Click);
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.LavenderBlush;
-            this.panel8.Controls.Add(this.groupÜbersicht);
-            this.panel8.Controls.Add(this.groupUrlaub);
-            this.panel8.Controls.Add(this.groupSuperUrlaub);
-            this.panel8.Controls.Add(this.groupKrankheit);
+            this.panel8.Controls.Add(this.groupSuperÜbersicht);
+            this.panel8.Controls.Add(this.groupÜbersicht1);
+            this.panel8.Controls.Add(this.groupSuperKrank);
             this.panel8.Controls.Add(this.groupSuperArbeit);
+            this.panel8.Controls.Add(this.groupSuperUrlaub);
             this.panel8.Controls.Add(this.groupArbeitstage);
+            this.panel8.Controls.Add(this.groupKrankheit);
+            this.panel8.Controls.Add(this.groupUrlaub);
             this.panel8.Location = new System.Drawing.Point(254, 12);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(666, 511);
             this.panel8.TabIndex = 7;
+            // 
+            // groupSuperÜbersicht
+            // 
+            this.groupSuperÜbersicht.Controls.Add(this.btnNeuigRef);
+            this.groupSuperÜbersicht.Controls.Add(this.dgvÜbersicht);
+            this.groupSuperÜbersicht.Controls.Add(this.txtEingabeNeuig);
+            this.groupSuperÜbersicht.Controls.Add(this.label10);
+            this.groupSuperÜbersicht.Controls.Add(this.txtAusgabeNeuig);
+            this.groupSuperÜbersicht.Controls.Add(this.lblWillkommen);
+            this.groupSuperÜbersicht.Location = new System.Drawing.Point(12, 13);
+            this.groupSuperÜbersicht.Name = "groupSuperÜbersicht";
+            this.groupSuperÜbersicht.Size = new System.Drawing.Size(645, 490);
+            this.groupSuperÜbersicht.TabIndex = 14;
+            this.groupSuperÜbersicht.TabStop = false;
+            // 
+            // btnNeuigRef
+            // 
+            this.btnNeuigRef.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnNeuigRef.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNeuigRef.Location = new System.Drawing.Point(514, 88);
+            this.btnNeuigRef.Name = "btnNeuigRef";
+            this.btnNeuigRef.Size = new System.Drawing.Size(119, 37);
+            this.btnNeuigRef.TabIndex = 34;
+            this.btnNeuigRef.Text = "Eingabe";
+            this.btnNeuigRef.UseVisualStyleBackColor = false;
+            this.btnNeuigRef.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // dgvÜbersicht
+            // 
+            this.dgvÜbersicht.AllowUserToAddRows = false;
+            this.dgvÜbersicht.AllowUserToDeleteRows = false;
+            this.dgvÜbersicht.AllowUserToResizeColumns = false;
+            this.dgvÜbersicht.AllowUserToResizeRows = false;
+            this.dgvÜbersicht.BackgroundColor = System.Drawing.Color.White;
+            this.dgvÜbersicht.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvÜbersicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvÜbersicht.Location = new System.Drawing.Point(363, 278);
+            this.dgvÜbersicht.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvÜbersicht.MultiSelect = false;
+            this.dgvÜbersicht.Name = "dgvÜbersicht";
+            this.dgvÜbersicht.ReadOnly = true;
+            this.dgvÜbersicht.RowHeadersWidth = 51;
+            this.dgvÜbersicht.RowTemplate.Height = 29;
+            this.dgvÜbersicht.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvÜbersicht.Size = new System.Drawing.Size(270, 198);
+            this.dgvÜbersicht.TabIndex = 33;
+            // 
+            // txtEingabeNeuig
+            // 
+            this.txtEingabeNeuig.Location = new System.Drawing.Point(363, 130);
+            this.txtEingabeNeuig.Name = "txtEingabeNeuig";
+            this.txtEingabeNeuig.Size = new System.Drawing.Size(270, 143);
+            this.txtEingabeNeuig.TabIndex = 3;
+            this.txtEingabeNeuig.Text = "";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Marlboro", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(17, 81);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(159, 39);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Neuigkeiten";
+            // 
+            // txtAusgabeNeuig
+            // 
+            this.txtAusgabeNeuig.Font = new System.Drawing.Font("Bahnschrift Condensed", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAusgabeNeuig.Location = new System.Drawing.Point(17, 130);
+            this.txtAusgabeNeuig.Name = "txtAusgabeNeuig";
+            this.txtAusgabeNeuig.ReadOnly = true;
+            this.txtAusgabeNeuig.Size = new System.Drawing.Size(332, 346);
+            this.txtAusgabeNeuig.TabIndex = 0;
+            this.txtAusgabeNeuig.Text = "";
+            // 
+            // lblWillkommen
+            // 
+            this.lblWillkommen.AutoSize = true;
+            this.lblWillkommen.BackColor = System.Drawing.Color.Transparent;
+            this.lblWillkommen.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblWillkommen.Location = new System.Drawing.Point(12, 17);
+            this.lblWillkommen.Name = "lblWillkommen";
+            this.lblWillkommen.Size = new System.Drawing.Size(164, 104);
+            this.lblWillkommen.TabIndex = 1;
+            this.lblWillkommen.Text = "Login As\r\n\r\n";
+            // 
+            // groupSuperKrank
+            // 
+            this.groupSuperKrank.Controls.Add(this.btnDelAllSuperKrank);
+            this.groupSuperKrank.Controls.Add(this.btnDelSuperKrank);
+            this.groupSuperKrank.Controls.Add(this.dgvSuperKrank);
+            this.groupSuperKrank.Controls.Add(this.lblSuperKrank);
+            this.groupSuperKrank.Location = new System.Drawing.Point(12, 13);
+            this.groupSuperKrank.Name = "groupSuperKrank";
+            this.groupSuperKrank.Size = new System.Drawing.Size(645, 488);
+            this.groupSuperKrank.TabIndex = 14;
+            this.groupSuperKrank.TabStop = false;
+            // 
+            // btnDelAllSuperKrank
+            // 
+            this.btnDelAllSuperKrank.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnDelAllSuperKrank.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelAllSuperKrank.Location = new System.Drawing.Point(427, 416);
+            this.btnDelAllSuperKrank.Name = "btnDelAllSuperKrank";
+            this.btnDelAllSuperKrank.Size = new System.Drawing.Size(188, 37);
+            this.btnDelAllSuperKrank.TabIndex = 33;
+            this.btnDelAllSuperKrank.Text = "Alle Löschen";
+            this.btnDelAllSuperKrank.UseVisualStyleBackColor = false;
+            this.btnDelAllSuperKrank.Click += new System.EventHandler(this.btnDelAllSuperKrank_Click);
+            // 
+            // btnDelSuperKrank
+            // 
+            this.btnDelSuperKrank.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnDelSuperKrank.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelSuperKrank.Location = new System.Drawing.Point(427, 98);
+            this.btnDelSuperKrank.Name = "btnDelSuperKrank";
+            this.btnDelSuperKrank.Size = new System.Drawing.Size(188, 37);
+            this.btnDelSuperKrank.TabIndex = 31;
+            this.btnDelSuperKrank.Text = "Löschen";
+            this.btnDelSuperKrank.UseVisualStyleBackColor = false;
+            this.btnDelSuperKrank.Click += new System.EventHandler(this.btnDelSuperKrank_Click);
+            // 
+            // dgvSuperKrank
+            // 
+            this.dgvSuperKrank.AllowUserToAddRows = false;
+            this.dgvSuperKrank.AllowUserToDeleteRows = false;
+            this.dgvSuperKrank.AllowUserToResizeColumns = false;
+            this.dgvSuperKrank.AllowUserToResizeRows = false;
+            this.dgvSuperKrank.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSuperKrank.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvSuperKrank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuperKrank.Location = new System.Drawing.Point(12, 96);
+            this.dgvSuperKrank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvSuperKrank.MultiSelect = false;
+            this.dgvSuperKrank.Name = "dgvSuperKrank";
+            this.dgvSuperKrank.ReadOnly = true;
+            this.dgvSuperKrank.RowHeadersWidth = 51;
+            this.dgvSuperKrank.RowTemplate.Height = 29;
+            this.dgvSuperKrank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvSuperKrank.Size = new System.Drawing.Size(404, 357);
+            this.dgvSuperKrank.TabIndex = 32;
+            // 
+            // lblSuperKrank
+            // 
+            this.lblSuperKrank.AutoSize = true;
+            this.lblSuperKrank.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSuperKrank.Location = new System.Drawing.Point(12, 21);
+            this.lblSuperKrank.Name = "lblSuperKrank";
+            this.lblSuperKrank.Size = new System.Drawing.Size(516, 52);
+            this.lblSuperKrank.TabIndex = 0;
+            this.lblSuperKrank.Text = "Alle Krankheitstage verwalten";
             // 
             // groupSuperArbeit
             // 
@@ -202,7 +363,7 @@ namespace WindowsFormsApp
             this.groupSuperArbeit.Controls.Add(this.label2);
             this.groupSuperArbeit.Location = new System.Drawing.Point(12, 10);
             this.groupSuperArbeit.Name = "groupSuperArbeit";
-            this.groupSuperArbeit.Size = new System.Drawing.Size(643, 488);
+            this.groupSuperArbeit.Size = new System.Drawing.Size(645, 490);
             this.groupSuperArbeit.TabIndex = 29;
             this.groupSuperArbeit.TabStop = false;
             this.groupSuperArbeit.Visible = false;
@@ -257,9 +418,101 @@ namespace WindowsFormsApp
             this.label2.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(17, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(375, 52);
+            this.label2.Size = new System.Drawing.Size(457, 52);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Arbeitstage verwalten";
+            this.label2.Text = "Alle Arbeitstage verwalten";
+            // 
+            // groupSuperUrlaub
+            // 
+            this.groupSuperUrlaub.Controls.Add(this.btnAblehnenSuperUrl);
+            this.groupSuperUrlaub.Controls.Add(this.btnDelSuperUrl);
+            this.groupSuperUrlaub.Controls.Add(this.btnDelAllSuperUrl);
+            this.groupSuperUrlaub.Controls.Add(this.btnGeneSuperUrl);
+            this.groupSuperUrlaub.Controls.Add(this.dgvSuperUrl);
+            this.groupSuperUrlaub.Controls.Add(this.label3);
+            this.groupSuperUrlaub.Location = new System.Drawing.Point(12, 11);
+            this.groupSuperUrlaub.Name = "groupSuperUrlaub";
+            this.groupSuperUrlaub.Size = new System.Drawing.Size(645, 490);
+            this.groupSuperUrlaub.TabIndex = 26;
+            this.groupSuperUrlaub.TabStop = false;
+            // 
+            // btnAblehnenSuperUrl
+            // 
+            this.btnAblehnenSuperUrl.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnAblehnenSuperUrl.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAblehnenSuperUrl.Location = new System.Drawing.Point(530, 100);
+            this.btnAblehnenSuperUrl.Name = "btnAblehnenSuperUrl";
+            this.btnAblehnenSuperUrl.Size = new System.Drawing.Size(103, 37);
+            this.btnAblehnenSuperUrl.TabIndex = 35;
+            this.btnAblehnenSuperUrl.Text = "Ablehnen";
+            this.btnAblehnenSuperUrl.UseVisualStyleBackColor = false;
+            this.btnAblehnenSuperUrl.Click += new System.EventHandler(this.btnAblehnenSuperUrl_Click);
+            // 
+            // btnDelSuperUrl
+            // 
+            this.btnDelSuperUrl.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnDelSuperUrl.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelSuperUrl.Location = new System.Drawing.Point(422, 143);
+            this.btnDelSuperUrl.Name = "btnDelSuperUrl";
+            this.btnDelSuperUrl.Size = new System.Drawing.Size(211, 37);
+            this.btnDelSuperUrl.TabIndex = 34;
+            this.btnDelSuperUrl.Text = "Löschen";
+            this.btnDelSuperUrl.UseVisualStyleBackColor = false;
+            this.btnDelSuperUrl.Click += new System.EventHandler(this.btnDelSuperUrlaub_Click);
+            // 
+            // btnDelAllSuperUrl
+            // 
+            this.btnDelAllSuperUrl.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnDelAllSuperUrl.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelAllSuperUrl.Location = new System.Drawing.Point(422, 418);
+            this.btnDelAllSuperUrl.Name = "btnDelAllSuperUrl";
+            this.btnDelAllSuperUrl.Size = new System.Drawing.Size(211, 37);
+            this.btnDelAllSuperUrl.TabIndex = 33;
+            this.btnDelAllSuperUrl.Text = "Alle Löschen";
+            this.btnDelAllSuperUrl.UseVisualStyleBackColor = false;
+            this.btnDelAllSuperUrl.Click += new System.EventHandler(this.btnDelAllSuperUrlaub_Click);
+            // 
+            // btnGeneSuperUrl
+            // 
+            this.btnGeneSuperUrl.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnGeneSuperUrl.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGeneSuperUrl.Location = new System.Drawing.Point(422, 100);
+            this.btnGeneSuperUrl.Name = "btnGeneSuperUrl";
+            this.btnGeneSuperUrl.Size = new System.Drawing.Size(102, 37);
+            this.btnGeneSuperUrl.TabIndex = 31;
+            this.btnGeneSuperUrl.Text = "Genehmigen";
+            this.btnGeneSuperUrl.UseVisualStyleBackColor = false;
+            this.btnGeneSuperUrl.Click += new System.EventHandler(this.btnGeneSuperUrl_Click);
+            // 
+            // dgvSuperUrl
+            // 
+            this.dgvSuperUrl.AllowUserToAddRows = false;
+            this.dgvSuperUrl.AllowUserToDeleteRows = false;
+            this.dgvSuperUrl.AllowUserToResizeColumns = false;
+            this.dgvSuperUrl.AllowUserToResizeRows = false;
+            this.dgvSuperUrl.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSuperUrl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvSuperUrl.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSuperUrl.Location = new System.Drawing.Point(17, 98);
+            this.dgvSuperUrl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvSuperUrl.MultiSelect = false;
+            this.dgvSuperUrl.Name = "dgvSuperUrl";
+            this.dgvSuperUrl.ReadOnly = true;
+            this.dgvSuperUrl.RowHeadersWidth = 51;
+            this.dgvSuperUrl.RowTemplate.Height = 29;
+            this.dgvSuperUrl.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvSuperUrl.Size = new System.Drawing.Size(399, 357);
+            this.dgvSuperUrl.TabIndex = 32;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(17, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(385, 52);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Urlaubstage verwalten\r\n";
             // 
             // groupArbeitstage
             // 
@@ -273,7 +526,7 @@ namespace WindowsFormsApp
             this.groupArbeitstage.Controls.Add(this.txtStunden);
             this.groupArbeitstage.Location = new System.Drawing.Point(12, 11);
             this.groupArbeitstage.Name = "groupArbeitstage";
-            this.groupArbeitstage.Size = new System.Drawing.Size(639, 487);
+            this.groupArbeitstage.Size = new System.Drawing.Size(645, 490);
             this.groupArbeitstage.TabIndex = 0;
             this.groupArbeitstage.TabStop = false;
             // 
@@ -369,97 +622,95 @@ namespace WindowsFormsApp
             this.txtStunden.Size = new System.Drawing.Size(178, 23);
             this.txtStunden.TabIndex = 3;
             // 
-            // groupÜbersicht
+            // groupKrankheit
             // 
-            this.groupÜbersicht.Controls.Add(this.groupSuperÜbersicht);
-            this.groupÜbersicht.Location = new System.Drawing.Point(0, -12);
-            this.groupÜbersicht.Name = "groupÜbersicht";
-            this.groupÜbersicht.Size = new System.Drawing.Size(668, 523);
-            this.groupÜbersicht.TabIndex = 30;
-            this.groupÜbersicht.TabStop = false;
+            this.groupKrankheit.Controls.Add(this.dgvKrank);
+            this.groupKrankheit.Controls.Add(this.label8);
+            this.groupKrankheit.Controls.Add(this.btnDelKrank);
+            this.groupKrankheit.Controls.Add(this.label6);
+            this.groupKrankheit.Controls.Add(this.button2);
+            this.groupKrankheit.Controls.Add(this.CalendarKrank);
+            this.groupKrankheit.Location = new System.Drawing.Point(12, 13);
+            this.groupKrankheit.Name = "groupKrankheit";
+            this.groupKrankheit.Size = new System.Drawing.Size(645, 487);
+            this.groupKrankheit.TabIndex = 11;
+            this.groupKrankheit.TabStop = false;
             // 
-            // groupSuperÜbersicht
+            // dgvKrank
             // 
-            this.groupSuperÜbersicht.BackColor = System.Drawing.Color.LavenderBlush;
-            this.groupSuperÜbersicht.Controls.Add(this.txtAusgabeNeuig);
-            this.groupSuperÜbersicht.Controls.Add(this.label9);
-            this.groupSuperÜbersicht.Controls.Add(this.button1);
-            this.groupSuperÜbersicht.Controls.Add(this.txtEingabeNeuig);
-            this.groupSuperÜbersicht.Controls.Add(this.dgvÜbersicht);
-            this.groupSuperÜbersicht.Controls.Add(this.lblWillkommen);
-            this.groupSuperÜbersicht.Location = new System.Drawing.Point(0, 0);
-            this.groupSuperÜbersicht.Name = "groupSuperÜbersicht";
-            this.groupSuperÜbersicht.Size = new System.Drawing.Size(668, 523);
-            this.groupSuperÜbersicht.TabIndex = 14;
-            this.groupSuperÜbersicht.TabStop = false;
+            this.dgvKrank.AllowUserToAddRows = false;
+            this.dgvKrank.AllowUserToDeleteRows = false;
+            this.dgvKrank.AllowUserToResizeColumns = false;
+            this.dgvKrank.AllowUserToResizeRows = false;
+            this.dgvKrank.BackgroundColor = System.Drawing.Color.White;
+            this.dgvKrank.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvKrank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKrank.Location = new System.Drawing.Point(224, 99);
+            this.dgvKrank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvKrank.MultiSelect = false;
+            this.dgvKrank.Name = "dgvKrank";
+            this.dgvKrank.ReadOnly = true;
+            this.dgvKrank.RowHeadersWidth = 51;
+            this.dgvKrank.RowTemplate.Height = 29;
+            this.dgvKrank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvKrank.Size = new System.Drawing.Size(409, 383);
+            this.dgvKrank.TabIndex = 29;
             // 
-            // txtAusgabeNeuig
+            // label8
             // 
-            this.txtAusgabeNeuig.Location = new System.Drawing.Point(22, 122);
-            this.txtAusgabeNeuig.Name = "txtAusgabeNeuig";
-            this.txtAusgabeNeuig.Size = new System.Drawing.Size(359, 388);
-            this.txtAusgabeNeuig.TabIndex = 33;
-            this.txtAusgabeNeuig.Text = "";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Marlboro", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(6, 333);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(227, 54);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Zum Löschen von Zeilen,\r\ndas zu löschende Datum anwählen \r\nund den Löschbutton be" +
+    "tätigen.";
             // 
-            // label9
+            // btnDelKrank
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Marlboro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(22, 85);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 34);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Neuigkeiten";
+            this.btnDelKrank.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnDelKrank.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDelKrank.Location = new System.Drawing.Point(17, 411);
+            this.btnDelKrank.Name = "btnDelKrank";
+            this.btnDelKrank.Size = new System.Drawing.Size(195, 34);
+            this.btnDelKrank.TabIndex = 33;
+            this.btnDelKrank.Text = "Löschen";
+            this.btnDelKrank.UseVisualStyleBackColor = false;
+            this.btnDelKrank.Click += new System.EventHandler(this.btnDelKrank_Click);
             // 
-            // button1
+            // label6
             // 
-            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button1.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(545, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 37);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Eingabe";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(17, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(434, 52);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Krankheitstage verwalten\r\n";
             // 
-            // txtEingabeNeuig
+            // button2
             // 
-            this.txtEingabeNeuig.Location = new System.Drawing.Point(387, 122);
-            this.txtEingabeNeuig.Name = "txtEingabeNeuig";
-            this.txtEingabeNeuig.Size = new System.Drawing.Size(268, 183);
-            this.txtEingabeNeuig.TabIndex = 29;
-            this.txtEingabeNeuig.Text = "";
+            this.button2.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button2.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.Location = new System.Drawing.Point(17, 273);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(195, 34);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Eingabe";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dgvÜbersicht
+            // CalendarKrank
             // 
-            this.dgvÜbersicht.AllowUserToAddRows = false;
-            this.dgvÜbersicht.AllowUserToDeleteRows = false;
-            this.dgvÜbersicht.AllowUserToResizeColumns = false;
-            this.dgvÜbersicht.AllowUserToResizeRows = false;
-            this.dgvÜbersicht.BackgroundColor = System.Drawing.Color.White;
-            this.dgvÜbersicht.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvÜbersicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvÜbersicht.Location = new System.Drawing.Point(387, 310);
-            this.dgvÜbersicht.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvÜbersicht.MultiSelect = false;
-            this.dgvÜbersicht.Name = "dgvÜbersicht";
-            this.dgvÜbersicht.ReadOnly = true;
-            this.dgvÜbersicht.RowHeadersWidth = 51;
-            this.dgvÜbersicht.RowTemplate.Height = 29;
-            this.dgvÜbersicht.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvÜbersicht.Size = new System.Drawing.Size(268, 200);
-            this.dgvÜbersicht.TabIndex = 28;
-            // 
-            // lblWillkommen
-            // 
-            this.lblWillkommen.AutoSize = true;
-            this.lblWillkommen.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblWillkommen.Location = new System.Drawing.Point(22, 27);
-            this.lblWillkommen.Name = "lblWillkommen";
-            this.lblWillkommen.Size = new System.Drawing.Size(142, 52);
-            this.lblWillkommen.TabIndex = 9;
-            this.lblWillkommen.Text = "LoginAs";
+            this.CalendarKrank.BackColor = System.Drawing.Color.LavenderBlush;
+            this.CalendarKrank.Location = new System.Drawing.Point(17, 99);
+            this.CalendarKrank.MaxSelectionCount = 365;
+            this.CalendarKrank.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.CalendarKrank.Name = "CalendarKrank";
+            this.CalendarKrank.ShowWeekNumbers = true;
+            this.CalendarKrank.TabIndex = 27;
             // 
             // groupUrlaub
             // 
@@ -471,7 +722,7 @@ namespace WindowsFormsApp
             this.groupUrlaub.Controls.Add(this.label1);
             this.groupUrlaub.Location = new System.Drawing.Point(12, 11);
             this.groupUrlaub.Name = "groupUrlaub";
-            this.groupUrlaub.Size = new System.Drawing.Size(639, 487);
+            this.groupUrlaub.Size = new System.Drawing.Size(645, 490);
             this.groupUrlaub.TabIndex = 10;
             this.groupUrlaub.TabStop = false;
             // 
@@ -550,135 +801,18 @@ namespace WindowsFormsApp
             this.label1.TabIndex = 9;
             this.label1.Text = "Urlaubstage verwalten\r\n";
             // 
-            // groupSuperUrlaub
+            // btnSupertools
             // 
-            this.groupSuperUrlaub.Controls.Add(this.label3);
-            this.groupSuperUrlaub.Location = new System.Drawing.Point(12, 11);
-            this.groupSuperUrlaub.Name = "groupSuperUrlaub";
-            this.groupSuperUrlaub.Size = new System.Drawing.Size(639, 487);
-            this.groupSuperUrlaub.TabIndex = 26;
-            this.groupSuperUrlaub.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(17, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(385, 52);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Urlaubstage verwalten\r\n";
-            // 
-            // groupKrankheit
-            // 
-            this.groupKrankheit.Controls.Add(this.dgvKrank);
-            this.groupKrankheit.Controls.Add(this.label8);
-            this.groupKrankheit.Controls.Add(this.btnDelKrank);
-            this.groupKrankheit.Controls.Add(this.button2);
-            this.groupKrankheit.Controls.Add(this.label6);
-            this.groupKrankheit.Controls.Add(this.CalendarKrank);
-            this.groupKrankheit.Controls.Add(this.groupSuperKrank);
-            this.groupKrankheit.Location = new System.Drawing.Point(12, 11);
-            this.groupKrankheit.Name = "groupKrankheit";
-            this.groupKrankheit.Size = new System.Drawing.Size(639, 487);
-            this.groupKrankheit.TabIndex = 11;
-            this.groupKrankheit.TabStop = false;
-            // 
-            // dgvKrank
-            // 
-            this.dgvKrank.AllowUserToAddRows = false;
-            this.dgvKrank.AllowUserToDeleteRows = false;
-            this.dgvKrank.AllowUserToResizeColumns = false;
-            this.dgvKrank.AllowUserToResizeRows = false;
-            this.dgvKrank.BackgroundColor = System.Drawing.Color.White;
-            this.dgvKrank.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvKrank.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKrank.Location = new System.Drawing.Point(224, 99);
-            this.dgvKrank.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvKrank.MultiSelect = false;
-            this.dgvKrank.Name = "dgvKrank";
-            this.dgvKrank.ReadOnly = true;
-            this.dgvKrank.RowHeadersWidth = 51;
-            this.dgvKrank.RowTemplate.Height = 29;
-            this.dgvKrank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvKrank.Size = new System.Drawing.Size(409, 383);
-            this.dgvKrank.TabIndex = 29;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Marlboro", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(6, 362);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(227, 54);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Zum Löschen von Zeilen,\r\ndas zu löschende Datum anwählen \r\nund den Löschbutton be" +
-    "tätigen.";
-            // 
-            // btnDelKrank
-            // 
-            this.btnDelKrank.BackColor = System.Drawing.Color.LavenderBlush;
-            this.btnDelKrank.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDelKrank.Location = new System.Drawing.Point(34, 434);
-            this.btnDelKrank.Name = "btnDelKrank";
-            this.btnDelKrank.Size = new System.Drawing.Size(178, 34);
-            this.btnDelKrank.TabIndex = 30;
-            this.btnDelKrank.Text = "Löschen";
-            this.btnDelKrank.UseVisualStyleBackColor = false;
-            this.btnDelKrank.Click += new System.EventHandler(this.btnDelKrank_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button2.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(34, 270);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 34);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Eingabe";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(17, 26);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(434, 52);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Krankheitstage verwalten\r\n";
-            // 
-            // CalendarKrank
-            // 
-            this.CalendarKrank.BackColor = System.Drawing.Color.LavenderBlush;
-            this.CalendarKrank.Location = new System.Drawing.Point(17, 99);
-            this.CalendarKrank.MaxSelectionCount = 365;
-            this.CalendarKrank.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.CalendarKrank.Name = "CalendarKrank";
-            this.CalendarKrank.ShowWeekNumbers = true;
-            this.CalendarKrank.TabIndex = 27;
-            // 
-            // groupSuperKrank
-            // 
-            this.groupSuperKrank.Controls.Add(this.label4);
-            this.groupSuperKrank.Location = new System.Drawing.Point(0, 0);
-            this.groupSuperKrank.Name = "groupSuperKrank";
-            this.groupSuperKrank.Size = new System.Drawing.Size(639, 487);
-            this.groupSuperKrank.TabIndex = 29;
-            this.groupSuperKrank.TabStop = false;
-            this.groupSuperKrank.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(17, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(434, 52);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Krankheitstage verwalten\r\n";
+            this.btnSupertools.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnSupertools.Font = new System.Drawing.Font("Marlboro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSupertools.Location = new System.Drawing.Point(928, 410);
+            this.btnSupertools.Name = "btnSupertools";
+            this.btnSupertools.Size = new System.Drawing.Size(218, 113);
+            this.btnSupertools.TabIndex = 12;
+            this.btnSupertools.Text = "Supervisortools";
+            this.btnSupertools.UseVisualStyleBackColor = false;
+            this.btnSupertools.Visible = false;
+            this.btnSupertools.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblAutoLogText
             // 
@@ -694,7 +828,7 @@ namespace WindowsFormsApp
             // 
             this.lblAutoLogoff.AutoSize = true;
             this.lblAutoLogoff.Font = new System.Drawing.Font("Marlboro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAutoLogoff.Location = new System.Drawing.Point(1127, 72);
+            this.lblAutoLogoff.Location = new System.Drawing.Point(1112, 72);
             this.lblAutoLogoff.Name = "lblAutoLogoff";
             this.lblAutoLogoff.Size = new System.Drawing.Size(34, 22);
             this.lblAutoLogoff.TabIndex = 10;
@@ -794,7 +928,7 @@ namespace WindowsFormsApp
             this.btnÜbersicht.Text = "Übersicht";
             this.btnÜbersicht.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnÜbersicht.UseVisualStyleBackColor = false;
-            this.btnÜbersicht.Click += new System.EventHandler(this.button5_Click);
+            this.btnÜbersicht.Click += new System.EventHandler(this.btnÜbersicht_Click);
             // 
             // panel4
             // 
@@ -940,6 +1074,43 @@ namespace WindowsFormsApp
             this.btnSupervisorEnd.Visible = false;
             this.btnSupervisorEnd.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 23);
+            this.label4.TabIndex = 0;
+            // 
+            // groupÜbersicht
+            // 
+            this.groupÜbersicht.Location = new System.Drawing.Point(0, 0);
+            this.groupÜbersicht.Name = "groupÜbersicht";
+            this.groupÜbersicht.Size = new System.Drawing.Size(10, 10);
+            this.groupÜbersicht.TabIndex = 30;
+            this.groupÜbersicht.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Marlboro", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(22, 79);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(138, 34);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Neuigkeiten";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button1.Font = new System.Drawing.Font("Marlboro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(545, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 37);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Eingabe";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
@@ -955,6 +1126,82 @@ namespace WindowsFormsApp
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // groupÜbersicht1
+            // 
+            this.groupÜbersicht1.Controls.Add(this.label13);
+            this.groupÜbersicht1.Controls.Add(this.dgvÜbersicht1);
+            this.groupÜbersicht1.Controls.Add(this.label11);
+            this.groupÜbersicht1.Controls.Add(this.txtAusgabeEmploy);
+            this.groupÜbersicht1.Controls.Add(this.label12);
+            this.groupÜbersicht1.Location = new System.Drawing.Point(12, 13);
+            this.groupÜbersicht1.Name = "groupÜbersicht1";
+            this.groupÜbersicht1.Size = new System.Drawing.Size(645, 490);
+            this.groupÜbersicht1.TabIndex = 15;
+            this.groupÜbersicht1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Marlboro", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(17, 81);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(159, 39);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Neuigkeiten";
+            // 
+            // txtAusgabeEmploy
+            // 
+            this.txtAusgabeEmploy.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtAusgabeEmploy.Location = new System.Drawing.Point(17, 130);
+            this.txtAusgabeEmploy.Name = "txtAusgabeEmploy";
+            this.txtAusgabeEmploy.ReadOnly = true;
+            this.txtAusgabeEmploy.Size = new System.Drawing.Size(216, 346);
+            this.txtAusgabeEmploy.TabIndex = 0;
+            this.txtAusgabeEmploy.Text = "";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Marlboro", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(12, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(164, 104);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Login As\r\n\r\n";
+            // 
+            // dgvÜbersicht1
+            // 
+            this.dgvÜbersicht1.AllowUserToAddRows = false;
+            this.dgvÜbersicht1.AllowUserToDeleteRows = false;
+            this.dgvÜbersicht1.AllowUserToResizeColumns = false;
+            this.dgvÜbersicht1.AllowUserToResizeRows = false;
+            this.dgvÜbersicht1.BackgroundColor = System.Drawing.Color.White;
+            this.dgvÜbersicht1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvÜbersicht1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvÜbersicht1.Location = new System.Drawing.Point(239, 130);
+            this.dgvÜbersicht1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvÜbersicht1.MultiSelect = false;
+            this.dgvÜbersicht1.Name = "dgvÜbersicht1";
+            this.dgvÜbersicht1.ReadOnly = true;
+            this.dgvÜbersicht1.RowHeadersWidth = 51;
+            this.dgvÜbersicht1.RowTemplate.Height = 29;
+            this.dgvÜbersicht1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvÜbersicht1.Size = new System.Drawing.Size(394, 346);
+            this.dgvÜbersicht1.TabIndex = 34;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Marlboro", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(239, 91);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(130, 39);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Übersicht";
+            // 
             // Startseite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -963,6 +1210,7 @@ namespace WindowsFormsApp
             this.ClientSize = new System.Drawing.Size(1178, 546);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Startseite";
             this.Text = "Startseite";
@@ -979,26 +1227,27 @@ namespace WindowsFormsApp
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.groupSuperArbeit.ResumeLayout(false);
-            this.groupSuperArbeit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperArbeit)).EndInit();
-            this.groupArbeitstage.ResumeLayout(false);
-            this.groupArbeitstage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArbeit)).EndInit();
-            this.groupÜbersicht.ResumeLayout(false);
             this.groupSuperÜbersicht.ResumeLayout(false);
             this.groupSuperÜbersicht.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvÜbersicht)).EndInit();
-            this.groupUrlaub.ResumeLayout(false);
-            this.groupUrlaub.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlaub)).EndInit();
+            this.groupSuperKrank.ResumeLayout(false);
+            this.groupSuperKrank.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperKrank)).EndInit();
+            this.groupSuperArbeit.ResumeLayout(false);
+            this.groupSuperArbeit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperArbeit)).EndInit();
             this.groupSuperUrlaub.ResumeLayout(false);
             this.groupSuperUrlaub.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSuperUrl)).EndInit();
+            this.groupArbeitstage.ResumeLayout(false);
+            this.groupArbeitstage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArbeit)).EndInit();
             this.groupKrankheit.ResumeLayout(false);
             this.groupKrankheit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKrank)).EndInit();
-            this.groupSuperKrank.ResumeLayout(false);
-            this.groupSuperKrank.PerformLayout();
+            this.groupUrlaub.ResumeLayout(false);
+            this.groupUrlaub.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUrlaub)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1010,6 +1259,9 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupÜbersicht1.ResumeLayout(false);
+            this.groupÜbersicht1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvÜbersicht1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1057,7 +1309,6 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label lblCalendar;
         private System.Windows.Forms.MonthCalendar CalendarSideBar;
         private System.Windows.Forms.MonthCalendar monthCalendar3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MonthCalendar CalendarKrank;
         private System.Windows.Forms.MonthCalendar CalendarArbeit;
         private System.Windows.Forms.Button btnArb;
@@ -1073,21 +1324,39 @@ namespace WindowsFormsApp
         private System.Windows.Forms.DataGridView dgvArbeit;
         private System.Windows.Forms.Button btnDelArbeit;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnDelKrank;
         private System.Windows.Forms.DataGridView dgvKrank;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupÜbersicht;
-        private System.Windows.Forms.GroupBox groupSuperÜbersicht;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.GroupBox groupSuperKrank;
-        public System.Windows.Forms.Label lblWillkommen;
-        private System.Windows.Forms.RichTextBox txtEingabeNeuig;
-        private System.Windows.Forms.DataGridView dgvÜbersicht;
         public System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox txtAusgabeNeuig;
         private System.Windows.Forms.Button btnDelAll;
         private System.Windows.Forms.Button btnDelSupArb;
         private System.Windows.Forms.DataGridView dgvSuperArbeit;
+        private System.Windows.Forms.Button btnDelKrank;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAblehnenSuperUrl;
+        private System.Windows.Forms.Button btnDelSuperUrl;
+        private System.Windows.Forms.Button btnDelAllSuperUrl;
+        private System.Windows.Forms.Button btnGeneSuperUrl;
+        private System.Windows.Forms.DataGridView dgvSuperUrl;
+        private System.Windows.Forms.GroupBox groupSuperÜbersicht;
+        private System.Windows.Forms.Label lblWillkommen;
+        private System.Windows.Forms.RichTextBox txtAusgabeNeuig;
+        private System.Windows.Forms.RichTextBox txtEingabeNeuig;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dgvÜbersicht;
+        private System.Windows.Forms.Button btnNeuigRef;
+        private System.Windows.Forms.GroupBox groupSuperKrank;
+        private System.Windows.Forms.Button btnDelAllSuperKrank;
+        private System.Windows.Forms.Button btnDelSuperKrank;
+        private System.Windows.Forms.DataGridView dgvSuperKrank;
+        private System.Windows.Forms.Label lblSuperKrank;
+        private System.Windows.Forms.GroupBox groupÜbersicht1;
+        private System.Windows.Forms.DataGridView dgvÜbersicht1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RichTextBox txtAusgabeEmploy;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
